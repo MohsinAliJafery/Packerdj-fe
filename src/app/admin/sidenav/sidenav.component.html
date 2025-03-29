@@ -1,0 +1,16 @@
+<div class="sidebar-menu">
+  <h3 class="text-center main-heading"> Admin Panel</h3>
+  <ul>
+    <li *ngFor="let item of sidebarItems">
+      <a [routerLink]="item.route" [routerLinkActive]="'active'">
+        <span>{{item.label}}</span>
+      </a>
+    </li>
+    <li>
+      <a (click)="logout()">
+        <i class="pi pi-sign-out"></i>
+        <span>Logout</span>
+      </a>
+    </li>
+  </ul>
+</div>

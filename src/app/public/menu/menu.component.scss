@@ -1,0 +1,172 @@
+.parent-container {
+  padding: 0% 0 10% 0;
+
+  .text-1 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 132%;
+    color: #121212;
+  }
+
+  .text-2 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 10px !important;
+    color: white;
+    background-color: #019585;
+    display: inline-block;
+    padding: 15px 0 15px 0;
+    height: 50px;
+  }
+
+  .text-3 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 160%;
+    letter-spacing: 0.02em;
+    color: rgba(18, 18, 18, 0.6);
+  }
+
+  .text-4 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 160%;
+    letter-spacing: 0.02em;
+    color: #019585;
+    text-decoration: underline;
+  }
+
+  .text-5 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: #121212;
+    opacity: 0.8;
+  }
+
+  .text-6 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: #121212;
+    opacity: 0.6;
+  }
+
+  .skill-image {
+    position: relative;
+    max-width: 500px;
+    max-height: 373px;
+  }
+
+  .image {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .promo-image-1 {
+    position: absolute;
+    z-index: 1;
+    top: 50px;
+    right: -40px;
+  }
+
+  .promo-image-2 {
+    position: absolute;
+    z-index: 1;
+    left: -40px;
+    bottom: 45px;
+  }
+}
+
+//                                media queries
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .skill-image {
+    position: relative;
+    max-width: 400px !important;
+    max-height: 380px !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .skill-image {
+    position: relative;
+    max-width: 400px;
+    max-height: 280px;
+  }
+
+  .promo-image-1 {
+    position: absolute;
+    z-index: 1;
+    top: 60px !important;
+    right: -20px !important;
+  }
+
+  .promo-image-2 {
+    position: absolute;
+    z-index: 1;
+    left: -10px !important;
+    bottom: 50px !important;
+  }
+
+  .img-1 {
+    height: 60px !important;
+    width: 150px !important;
+  }
+
+  .img-2 {
+    height: 60px !important;
+    width: 200px !important;
+  }
+
+  .text-1 {
+    font-size: 37px !important;
+  }
+
+  .text-2 {
+    font-size: 37px !important;
+  }
+
+  .text-3 {
+    font-size: 15px !important;
+  }
+
+  .text-4 {
+    font-size: 15px !important;
+  }
+
+  .register-button {
+    margin-left: 12px !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .promo-image-1 {
+    position: absolute;
+    z-index: 1;
+    top: 15px !important;
+    right: -20px !important;
+  }
+
+  .promo-image-2 {
+    position: absolute;
+    z-index: 1;
+    left: -10px !important;
+    bottom: 20px !important;
+  }
+}

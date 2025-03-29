@@ -1,0 +1,373 @@
+
+
+
+
+
+.main-Parent-container {
+    // height: 420px;
+    padding: 0;
+    background-color: #F8FBFA;
+    // border: 1px solid red;
+}
+
+.footer-container {
+    
+    padding: 0 !important;
+    // border: 5px solid rgb(0, 255, 38);
+}
+
+.logo {
+    height: 60px;
+    width: 260px;
+}
+
+.text-1 {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    color: #121212;
+    opacity: 0.6;
+}
+
+.social-media {
+    width: 100px;
+    // border: 1px solid red;
+}
+
+.footer-child {
+    height: 130px;
+    // border: 1px solid red;
+}
+
+.footer-menu {
+    height: 200px;
+    padding: 0 !important;
+    // border: 1px solid red;
+}
+
+@media only screen and (max-width:576px) {
+
+   
+
+
+    .footer-menu {
+        height: 75px !important;
+    }
+
+    
+
+    .subscribe-button {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 18px 24px;
+        gap: 4px;
+        width: 100px !important;
+        height: 45px !important;
+        font-size: 13px !important;
+        margin-top: 5px;
+    }
+    .logo{
+        width: 200px;
+        height: 50px;
+    }
+
+    .text-1{
+
+        font-size: 14px;
+    }
+
+    form {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 300px;
+    
+    
+    }
+    
+}
+
+// @media only screen and (min-width:450px) and (max-width:576px)
+// {
+//     .footer-bottom {
+//         margin-top: 20%;
+//         padding: 0 !important;}
+
+        
+// }
+
+// @media only screen and (min-width:320px) and (max-width:450px){
+//     .footer-bottom {
+//         margin-top: 35%;
+//         padding: 0 !important;}
+// }
+// @media only screen and  (max-width:320px){
+//     .footer-bottom {
+//         margin-top: 45%;
+//         padding: 0 !important;}
+// }
+
+
+.container-fluid {
+    --bs-gutter-x: 0 !important;
+}
+
+a {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: rgba(18, 18, 18, 0.7);
+    text-decoration: none;
+    // border: 1px solid red;
+    padding: 0 !important;
+    
+   
+
+
+}
+@media only screen and  (max-width:330px){
+    a{
+        font-size: 12px !important;
+    }
+}
+.text-2 {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.03em;
+    color: #121212;
+}
+
+
+// .form-control{
+//     height: 55px;
+//     box-shadow: none;
+//     caret-color: #019585;
+//     background-color: #FAFAFA;
+//     border-radius: 10px;
+
+// }
+
+// .form-control:focus{
+//     border-color: #019585;
+//     border-width: 2px;
+//     box-shadow: none;
+
+// }
+@media only screen and (min-width:768px) and (max-width:992px) {
+
+    .footer-child {
+        margin-left: 10%;
+    }
+
+    .footer-menu {
+        margin-right: 10%;
+    }
+
+    .footer-child-3 {
+        margin-left: 10%;
+    }
+
+}
+
+@media only screen and (min-width:576px) and (max-width:768px) {
+
+    .footer-child {
+        margin-left: 5%;
+    }
+
+    .footer-menu {
+        margin-right: 1%;
+    }
+
+    .footer-child-3 {
+        margin-left: 5%;
+    }
+
+}
+
+.form-control {
+    height: 60px;
+    box-shadow: none;
+    caret-color: #019585;
+    background-color: #FAFAFA;
+    border-radius: 10px;
+    padding-left: 15px;
+
+}
+
+.form-control:focus {
+    border-color: #019585;
+    border-width: 2px;
+    box-shadow: none;
+    padding-left: 15px;
+
+
+}
+
+.subscribe-button {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 24px;
+    gap: 4px;
+    width: 127px;
+    height: 54px;
+    background: #019585;
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+}
+
+.text-3 {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 0.03em;
+    color: #121212;
+    text-align: left;
+    // border:1px solid red; 
+}
+
+.text-4 {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 35px;
+    color: #121212;
+    opacity: 0.6;
+}
+
+.footer-child-3 {
+    height: 200px;
+    padding: 0;
+    // border: 1px solid red;
+}
+
+::placeholder {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #121212;
+    // padding-left: 12px;
+}
+
+form {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+
+}
+
+.text-5 {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 20px;
+    color: #121212;
+}
+
+.footer-bottom {
+    margin-top: 7%;
+    margin-bottom: 2%;
+    padding: 0 !important;
+
+    .footer-bottom-child {
+        width: 140px;
+    }
+
+    .footer-bottom-child {
+        height: 25px;
+    }
+}
+@media only screen and (min-width:450px) and (max-width:576px) {
+
+    .footer-bottom {
+        margin-top: 25% !important;
+        margin-bottom: 5% !important;
+        padding: 0 !important;}
+
+}
+@media only screen and (min-width:350px) and (max-width:450px) {
+
+    .footer-bottom {
+        margin-top: 35% !important;
+        margin-bottom: 5% !important;
+        padding: 0 !important;}
+
+}
+@media only screen  and (max-width:350px) {
+
+    .footer-bottom {
+        margin-top: 50% !important;
+        margin-bottom: 5% !important;
+        padding: 0 !important;}
+
+}
+
+
+
+@media only screen  and (min-width:1400px) and (max-width:5000px) {
+
+    form {
+        width: 340px !important;
+        margin: 0 !important;
+     //    border:1px solid red
+     }
+
+    .text-4 {
+       width: 340px !important;
+    //    border:1px solid red;
+    }
+
+    .footer-child-3 {
+        height: 200px;
+        width: 400px !important;
+        padding: 0;
+        // border:1px solid green;
+        
+    }
+
+    .footer-child {
+        height: 130px;
+        width: 400px !important;
+        // border: 1px solid red;
+    }
+
+    .footer-menu {
+        height: 200px;
+        width: 130px !important;
+        padding: 0 !important;
+        // border: 1px solid red;
+    }
+
+}
+
+@media only screen  and (min-width:1200px) and (max-width:1400px) {
+
+    .text-4 {
+       width: 340px !important;
+    }
+
+}

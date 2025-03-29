@@ -1,0 +1,116 @@
+.backGround {
+  background-color: #019585;
+  color: white;
+  font-size: 17px;
+  height: 50px;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.create-button {
+  box-shadow: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 24px;
+  gap: 4px;
+  width: 127px;
+  height: 54px;
+  background: #019585;
+  border-radius: 10px;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+}
+
+.detail_button {
+  box-shadow: none;
+  border: none;
+  font-family: "Plus Jakarta Sans";
+  font-weight: 600;
+  height: 54px;
+  background: #019585;
+  border-radius: 10px;
+  color: white;
+}
+
+// Admin Search SCSS
+.search-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  height: 55px;
+  background: #019585;
+  box-shadow: 0px 0px 0px rgba(1, 149, 133, 0.15);
+  border-radius: 10px;
+  border: none;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 151.5%;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  max-width: 250px;
+}
+
+.form-control {
+  height: 50px;
+  box-shadow: none;
+  caret-color: #019585;
+  background-color: #fafafa;
+  border-radius: 10px;
+  padding-left: 45px;
+}
+
+.form-control:focus {
+  box-shadow: 4px 4px 20px rgba(1, 149, 133, 0.15);
+  border: 1px solid #019585;
+}
+
+.form-group .input-image {
+  position: relative;
+  left: 15px;
+  bottom: 36px;
+}
+
+.select-image {
+  position: relative;
+  left: 15px;
+  bottom: 36px;
+}
+
+.form-select {
+  padding-left: 45px;
+  height: 50px;
+  background-color: #f5f7f9;
+  border-radius: 10px;
+  border: none;
+  box-shadow: none;
+}
+
+.form-select.type-select {
+  padding-left: 45px;
+  height: 50px;
+  background-color: #f5f7f9;
+  border-radius: 10px;
+  border: none;
+  box-shadow: none;
+}
+
+::placeholder {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 151.5%;
+  color: #121212;
+}

@@ -1,0 +1,185 @@
+<div class="coaching-results-conatiner">
+  <div class="col-12 mt-4 mb-xl-0 mb-4 d-center">
+    <form
+      class="search-form d-flex flex-column col-12 col-md-10 col-lg-11"
+      [formGroup]="SearchCoachForm"
+    >
+      <div class="row justify-content-center">
+        <div class="form-group col-lg-3 col-md-6 col-sm-7 col-11">
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            formControlName="title"
+            aria-describedby="emailHelp"
+            placeholder="Search by name role or category"
+          />
+          <img
+            src="assets/images/search-normal.png"
+            alt="search-icon"
+            class="input-image"
+          />
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-7 col-11">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="coachCategory"
+            formControlName="coachCategory"
+          >
+            <option selected hidden value="">Category</option>
+            <option
+              *ngFor="let category of CoachCategoryList"
+              [ngValue]="category.title"
+            >
+              {{ category.title }}
+            </option>
+          </select>
+          <img
+            src="assets/images/task-square.png"
+            alt="Image Description"
+            class="select-image"
+          />
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-sm-7 col-11">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="coachType"
+            formControlName="coachType"
+          >
+            <option selected hidden value="">Type</option>
+            <option *ngFor="let type of CoachTypeList" [ngValue]="type.title">
+              {{ type.title }}
+            </option>
+          </select>
+          <img
+            src="assets/images/calendar-2.png"
+            alt="Image Description"
+            class="select-image"
+          />
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-sm-7 col-11">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="budget"
+            formControlName="budget"
+          >
+            <option selected hidden value="">Budget</option>
+            <option *ngFor="let i of CoachBudget" [value]="i.value">
+              {{ i.label }}
+            </option>
+          </select>
+          <img
+            src="assets/images/dollar-circle.png"
+            alt="Budget-icon"
+            class="select-image"
+          />
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-7 col-11">
+          <button
+            type="button"
+            class="search-button w-100"
+            (click)="searchCoaches()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-12 d-center">
+    <div class="col-11">
+      <div class="row">
+        <div
+          class="col-lg-4 col-sm-6 col-12 mb-4 mt-1"
+          *ngFor="let item of CoachesCards; let i = index"
+        >
+          <div
+            class="coach-card p-3"
+            style="border: 1px solid #e4e4e4"
+            (click)="gotoCoachesDetail(item._id)"
+          >
+            <div class="d-flex flex-column align-items-center dp-container">
+              <img
+                *ngIf="item?.file?.path"
+                [src]="baseURL + item.file.path"
+                alt="coaching-main-img"
+                class="border-radius h-100 w-100"
+              />
+
+              <div class="button-conatiner">
+                <button type="button" class="available-button">
+                  Available
+                </button>
+              </div>
+              <div class="bottom-shadow"></div>
+            </div>
+            <div class="coaches-info-parent">
+              <div class="coaches-info">
+                <div class="mt-3 d-flex">
+                  <span class="text-1">{{ item.fullName }}</span>
+                </div>
+                <div class="mt-2 d-flex">
+                  <span
+                    ><img src="assets/images/coach briefcase.png" alt=""
+                  /></span>
+                  <span class="text-2 mx-2"
+                    >{{ item.role }}
+                    <span class="text-3">{{ item.designation }} at</span>
+                    &nbsp;{{ item.company }}
+                  </span>
+                </div>
+                <div class="mt-2 d-flex">
+                  <span
+                    ><img src="assets/images/coach-dollar-circle.png" alt=""
+                  /></span>
+                  <span class="text-2 mx-2">{{ item.startsFrom }}</span>
+                </div>
+                <div class="mt-2 d-flex">
+                  <span
+                    ><img src="assets/images/like-shapes.png" alt=""
+                  /></span>
+                  <span class="text-2 mx-2">
+                    4.89&nbsp;
+                    <span class="text-3">(9 reviews)</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 *ngIf="!CoachesCards?.length">No result found</h2>
+      </div>
+      <!-- <div class="d-flex justify-content-center spinner mt-1 mb-4">
+        <mat-spinner [diameter]="40"></mat-spinner>
+      </div> -->
+    </div>
+  </div>
+  <nav aria-label="Page navigation" *ngIf="CoachesCards?.length">
+    <ul class="pagination">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <a class="page-link" (click)="changePage(currentPage - 1)">Previous</a>
+      </li>
+
+      <li
+        class="page-item"
+        *ngFor="let page of pageNumbers"
+        [class.active]="currentPage === page"
+      >
+        <a class="page-link" *ngIf="page !== -1" (click)="changePage(page)">{{
+          page
+        }}</a>
+        <a class="page-link" *ngIf="page === -1">&hellip;</a>
+      </li>
+
+      <li class="page-item" [class.disabled]="currentPage === totalPages">
+        <a class="page-link" (click)="changePage(currentPage + 1)">Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>

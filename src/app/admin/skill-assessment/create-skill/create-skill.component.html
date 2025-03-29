@@ -1,0 +1,128 @@
+<div class="d-center h-100">
+  <div class="login-container col-xl-5 col-lg-6 col-md-7 col-sm-10 col-11">
+    <div class="row">
+      <div
+        class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center"
+      >
+        <h1 class="main-heading">
+          {{ id === "add" ? "Create Skill" : "Update Skill" }}
+        </h1>
+      </div>
+    </div>
+
+    <form [formGroup]="skillForm">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            formControlName="title"
+            placeholder="Title"
+          />
+          <div
+            *ngIf="
+              skillForm.controls['title'].invalid &&
+              skillForm.controls['title'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Title is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <angular-editor
+            [placeholder]="'Description'"
+            formControlName="description"
+            name="description"
+            [config]="config"
+          ></angular-editor>
+
+          <div
+            *ngIf="
+              skillForm.controls['description'].invalid &&
+              skillForm.controls['description'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Description is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="type"
+            formControlName="type"
+          >
+            <option selected hidden value="">Skill Type</option>
+            <option *ngFor="let type of SkillType" [value]="type">
+              {{ type }}
+            </option>
+          </select>
+          <div
+            *ngIf="
+              skillForm.controls['type'].invalid &&
+              skillForm.controls['type'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Skill type is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <input
+            type="text"
+            class="form-control"
+            id="link"
+            formControlName="link"
+            placeholder="Add URL"
+          />
+          <div
+            *ngIf="
+              skillForm.controls['link'].invalid &&
+              skillForm.controls['link'].touched
+            "
+            class="text-danger mt-2"
+          >
+            URL is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div
+          class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center mt-2"
+        >
+          <div class="col-sm-4 col-6">
+            <button
+              type="button"
+              class="login-button w-100 h-100"
+              (click)="onClick()"
+              *ngIf="id === 'add'"
+            >
+              Create
+            </button>
+            <button
+              type="button"
+              class="login-button w-100 h-100"
+              (click)="updateSkill()"
+              *ngIf="id !== 'add'"
+            >
+              Update
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

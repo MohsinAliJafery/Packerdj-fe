@@ -1,0 +1,110 @@
+<div class="d-flex flex-column align-items-center">
+  <div class="col-11 mt-5">
+    <table class="table">
+      <thead class="backGround">
+        <tr>
+          <th class="col">#</th>
+          <th class="col">Name</th>
+          <th class="col">Email</th>
+          <th class="col">Picture</th>
+          <th class="col">Resume</th>
+          <th class="col">Not in accordance</th>
+          <th class="col">View Details</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="appliedjobsList?.length">
+        <tr *ngFor="let item of appliedjobsList; let i = index">
+          <th>{{ i + 1 }}</th>
+          <td>
+            {{ item.userDetails?.firstName + " " + item.userDetails?.lastName }}
+          </td>
+          <td>{{ item.userDetails?.email }}</td>
+          <td>
+            <div
+              *ngIf="
+                item.userDetails?.profile && item.userDetails?.profile?.file
+              "
+              class="profile-img"
+            >
+              <img
+                [src]="baseURL + item.userDetails.profile.file.path"
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </td>
+          <td>
+            <div style="width: 150px; height: 40px">
+              <button
+                type="button"
+                class="download_button w-100 h-100"
+                (click)="downloadResume(item.resume, item._id)"
+              >
+                Resume
+                <img
+                  src="assets/images/document-download.png"
+                  alt=""
+                  class="ps-2"
+                />
+              </button>
+            </div>
+          </td>
+          <td>
+            <div class="d-flex align-items-center justify-content-center">
+              <input
+                type="checkbox"
+                [value]="item.IsSelected"
+                id="IsSelected"
+                name="{{ item.IsSelected }}"
+                [(ngModel)]="item.IsSelected"
+                #selectAll="ngModel"
+                class="form-check"
+                (change)="checkSelected(item._id)"
+                [disabled]="item.IsSelected"
+              />
+            </div>
+          </td>
+
+          <td>
+            <div style="width: 150px; height: 50px">
+              <button
+                type="button"
+                class="detail_button w-100 h-100"
+                (click)="userDetail(item.user_id)"
+              >
+                View Detail
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="!appliedjobsList?.length">
+      <p class="p-4 text-center">No result found</p>
+    </div>
+    <nav aria-label="Page navigation" *ngIf="appliedjobsList?.length">
+      <ul class="pagination">
+        <li class="page-item" [class.disabled]="currentPage === 1">
+          <a class="page-link" (click)="changePage(currentPage - 1)"
+            >Previous</a
+          >
+        </li>
+
+        <li
+          class="page-item"
+          *ngFor="let page of pageNumbers"
+          [class.active]="currentPage === page"
+        >
+          <a class="page-link" *ngIf="page !== -1" (click)="changePage(page)">{{
+            page
+          }}</a>
+          <a class="page-link" *ngIf="page === -1">&hellip;</a>
+        </li>
+
+        <li class="page-item" [class.disabled]="currentPage === totalPages">
+          <a class="page-link" (click)="changePage(currentPage + 1)">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

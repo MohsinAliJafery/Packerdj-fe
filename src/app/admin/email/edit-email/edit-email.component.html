@@ -1,0 +1,42 @@
+<div class="d-center h-100">
+  <div class="login-container col-xl-5 col-lg-6 col-md-7 col-sm-10 col-11">
+    <div class="row">
+      <div
+        class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center"
+      >
+        <h1 class="main-heading">Update Email</h1>
+      </div>
+    </div>
+
+    <form>
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <label>Email Content</label>
+
+          <angular-editor
+            [placeholder]="'Enter text here...'"
+            [(ngModel)]="emailContent"
+            name="emailContent"
+            [config]="config"
+          ></angular-editor>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div
+          class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center mt-2"
+        >
+          <div class="col-sm-4 col-6">
+            <button
+              type="button"
+              class="login-button w-100 h-100"
+              (click)="updateEmail()"
+            >
+              Update
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+<div class="d-flex flex-column align-items-center">
+  <div class="col-10 mt-4">
+    <div class="d-flex justify-content-end mb-2">
+      <button class="edit-button" (click)="editSetting(settingObj._id)">
+        Edit Details
+      </button>
+    </div>
+    <table class="table">
+      <thead class="backGround">
+        <tr>
+          <th class="col">#</th>
+          <th class="col">Name</th>
+          <th class="col">Detail</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="settingObj">
+        <tr>
+          <th>1</th>
+
+          <td>Bank Name</td>
+          <td>{{ settingObj.Bank_Name }}</td>
+        </tr>
+        <tr>
+          <th>2</th>
+
+          <td>Address</td>
+          <td>{{ settingObj.Address }}</td>
+        </tr>
+        <tr>
+          <th>3</th>
+
+          <td>Bank Branch Name</td>
+          <td>{{ settingObj.Bank_Branch_Name }}</td>
+        </tr>
+        <tr>
+          <th>4</th>
+
+          <td>Account Number</td>
+          <td>{{ settingObj.Account_Number }}</td>
+        </tr>
+        <tr>
+          <th>5</th>
+
+          <td>Bank_Account_Holder</td>
+          <td>{{ settingObj.Bank_Account_Holder }}</td>
+        </tr>
+        <tr>
+          <th>6</th>
+
+          <td>Swift Code</td>
+          <td>{{ settingObj.Swift_Code }}</td>
+        </tr>
+        <tr>
+          <th>7</th>
+
+          <td>Technical</td>
+          <td>{{ settingObj.Technical }}</td>
+        </tr>
+        <tr>
+          <th>8</th>
+
+          <td>Soft</td>
+          <td>{{ settingObj.Soft }}</td>
+        </tr>
+        <tr>
+          <th>9</th>
+
+          <td>English</td>
+          <td>{{ settingObj.English }}</td>
+        </tr>
+        <tr>
+          <th>10</th>
+
+          <td>Career</td>
+          <td>{{ settingObj.Career }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="!settingObj">
+      <p class="p-4 text-center">No result found</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,146 @@
+<div class="job-detail-container">
+  <div class="container-fluid">
+    <div class="row padding justify-content-center">
+      <div class="col-lg-6 col-sm-10 col-11 ps-lg-5 ps-0" *ngIf="jobDetail">
+        <div class="col-xxl-10 col-lg-12">
+          <div>
+            <span class="text-1">{{ jobDetail.title }}</span>
+          </div>
+
+          <div class="col-xxl-10 col-xl-12 salary-info p-3 mt-4">
+            <span class="text-2 d-flex col-12"
+              >Salary : Rp. {{ jobDetail.salaryFrom }} - Rp.
+              {{ jobDetail.salaryTo }} / Month</span
+            >
+            <span class="text-2 d-flex col-12 mt-1"
+              >Type :
+              <button type="button" class="button-1">
+                {{ jobDetail.jobType }}
+              </button>
+            </span>
+            <span class="text-2 d-flex col-12 mt-1"
+              >Category :
+              <button type="button" class="button-2">
+                {{ jobDetail.jobCategory }}
+              </button>
+            </span>
+            <span class="text-2 d-flex col-12 mt-1"
+              >Listed : {{ jobDetail.createdAt | date : "dd MMMM, yyyy" }}</span
+            >
+          </div>
+        </div>
+
+        <div class="col-12 mt-5">
+          <p class="profile-text">
+            <strong class="text-3">{{ jobDetail?.companyName }}</strong>
+            {{ jobDetail.empDescription }} <br />
+            <br />
+          </p>
+        </div>
+
+        <div class="col-12 mt-5">
+          <div class="col-12 d-flex align-items-center">
+            <img src="assets/images/description.png" alt="" />
+            <span class="text-5 ms-1"> Job Description </span>
+          </div>
+          <ul class="text-4 mt-4">
+            <li [innerHTML]="jobDetail.description"></li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="d-flex col-lg-6 col-12 order-first order-lg-last mb-lg-0 secondContainer justify-content-center"
+      >
+        <div
+          class="apply-job d-flex flex-column align-items-center justify-content-center"
+        >
+          <div class="logo">
+            <img
+              [src]="baseURL + jobDetail?.empImage?.path"
+              alt="company-logo"
+              class="img-logo"
+            />
+          </div>
+
+          <div class="d-flex flex-column align-items-center mt-5">
+            <span class="text-6">{{ jobDetail?.companyName }}</span>
+            <!-- <span class="text-7">Indonesia</span> -->
+          </div>
+
+          <button
+            type="button"
+            class="apply-button col-9"
+            (click)="openModel(applyjob)"
+          >
+            Apply on this job
+            <img
+              src="assets/images/arrow-right-2.png"
+              alt="arrow"
+              class="ms-3"
+            />
+          </button>
+        </div>
+      </div>
+      <ng-template #applyjob>
+        <div class="modalForm">
+          <div class="modal-body">
+            <div class="d-flex flex-column">
+              <div
+                class="mt-2 d-flex flex-row justify-content-between align-items-center"
+              >
+                <span class="text-8">Choose your resume</span>
+                <div>
+                  <img
+                    src="assets/images/close-circle.png"
+                    alt="icon"
+                    (click)="dismissAll()"
+                  />
+                </div>
+              </div>
+
+              <div class="text-9 mt-4 mb-4">
+                <span
+                  >Choose one of your resumes that you want to use to apply for
+                  this job</span
+                >
+              </div>
+
+              <div
+                class="d-flex flex-row align-items-center p-4 resume-card mb-4"
+                *ngFor="let item of resumeList; let i = index"
+                (click)="selectedResume(item.data, i)"
+                [ngStyle]="
+                  i == selectedValue
+                    ? { border: '1px solid #019585' }
+                    : { border: '1.08908px solid #e0e0e0' }
+                "
+              >
+                <div>
+                  <img src="/assets/images/upload-cv.png" />
+                </div>
+                <div class="mx-4">
+                  <span class="text-10">{{ item.data.originalname }}</span>
+                </div>
+              </div>
+              <h2 *ngIf="!resumeList?.length">No resume found</h2>
+              <div class="d-flex justify-content-end">
+                <div class="col-5 mt-5 mb-4">
+                  <button
+                    class="apply-resume w-100"
+                    [disabled]="!resumeList?.length"
+                    (click)="ApplyJob()"
+                  >
+                    Apply Now
+                  </button>
+                </div>
+              </div>
+
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

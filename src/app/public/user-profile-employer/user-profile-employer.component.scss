@@ -1,0 +1,539 @@
+.update-profile-container {
+    background-color: white;
+
+    .jobs-card-container {
+        .text-1 {
+            font-family: "Plus Jakarta Sans";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 23px;
+            color: #2e2e30;
+        }
+
+        .text-2 {
+            font-family: 'Plus Jakarta Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 40px;
+            text-align: center;
+            color: #2E2E30;
+        }
+
+        .text-3 {
+            font-family: "Plus Jakarta Sans";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 40px;
+            letter-spacing: -0.01em;
+            color: #121212;
+        }
+
+        .viewDetail {
+            font-family: 'Plus Jakarta Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: -0.01em;
+            color: #121212;
+            opacity: 0.7;
+        }
+    }
+
+    .chart-container {
+        .text-4 {
+            font-family: "Plus Jakarta Sans";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 25px;
+            letter-spacing: -0.01em;
+            color: #121212;
+        }
+    }
+
+    .appliedJob-container {
+        .text-4 {
+            font-family: "Plus Jakarta Sans";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 25px;
+            letter-spacing: -0.01em;
+            color: #121212;
+        }
+
+        .card-button-1 {
+            font-family: "Plus Jakarta Sans";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 132%;
+            color: #ff801c;
+            opacity: 0.6;
+            border: none;
+            width: auto;
+        }
+
+        .card-button-2 {
+            font-family: "Plus Jakarta Sans";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 132%;
+            color: #554bff;
+            opacity: 0.6;
+            border: none;
+            width: auto;
+        }
+
+        .text-5 {
+            font-family: "Plus Jakarta Sans";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 132%;
+            color: #121212;
+        }
+
+        .text-6 {
+            font-family: "Plus Jakarta Sans";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 132%;
+            color: #121212;
+            opacity: 0.6;
+        }
+
+        .text-7 {
+            font-family: "Plus Jakarta Sans";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 132%;
+            color: #121212;
+        }
+
+        .text-8 {
+            font-family: "Plus Jakarta Sans";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 132%;
+            color: #121212;
+            opacity: 0.5;
+        }
+
+        .text-10 {
+            font-family: "Plus Jakarta Sans";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 132%;
+            color: #121212;
+            opacity: 0.7;
+        }
+
+        .dot {
+            height: 0;
+            border: 3px solid #828282;
+            border-radius: 10px;
+        }
+
+        .full-Time {
+            // border:1px solid red;
+            width: auto;
+        }
+
+        .design-job {
+            // border:1px solid red;
+            width: auto;
+        }
+
+       
+        .matcard {
+            // height: 201px;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            box-shadow: none;
+            border-radius: 15px;
+        }
+    }
+
+    .job-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 4.35632px 17.4253px;
+        gap: 8.71px;
+        width: fit-content;
+        height: fit-content;
+        background: #f9f2eb;
+        border-radius: 5.4454px;
+        font-family: "Plus Jakarta Sans";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16.3362px;
+        line-height: 21px;
+        letter-spacing: -0.01em;
+        color: #ff801c;
+        opacity: 0.6;
+    }
+
+    .job-button2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 4.36364px 17.4545px;
+        gap: 8.73px;
+        width: fit-content;
+        height: fit-content;
+        background: #EBF5F4;
+        border-radius: 5.45455px;
+        font-family: 'Plus Jakarta Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16.3636px;
+        line-height: 21px;
+        letter-spacing: -0.01em;
+        color: #019585;
+        opacity: 0.6;
+    }
+
+    .dot {
+        height: 5px;
+        width: 5px;
+        border: 1px solid gray;
+        border-radius: 50px;
+    }
+
+    .text-9 {
+        font-family: "Plus Jakarta Sans";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16.3362px;
+        line-height: 21px;
+        letter-spacing: -0.01em;
+        color: #121212;
+        opacity: 0.6;
+    }
+}
+
+.jobTypeCard {
+    // height: 300px;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    box-shadow: none;
+}
+
+.viewAll-button {
+    width: 120px;
+    height: 50px;
+    background: #019585;
+    box-shadow: 0px 0px 0px rgba(1, 149, 133, 0.15);
+    border-radius: 10px;
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    border: none;
+}
+
+.modalForm {
+    height: 220px;
+}
+
+.modalForm.update-profile {
+    height: 600px;
+    overflow-y: auto;
+}
+
+.form-control.text-area {
+    height: 140px;
+    background: #F2F2F2;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+}
+
+.text-11 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.01em;
+    color: #121212;
+}
+
+.text-12 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #121212;
+    opacity: 0.7;
+}
+
+.text-13 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: -0.01em;
+    color: #121212;
+    opacity: 0.8;
+}
+
+.text-14 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #121212;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.text-15 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: -0.01em;
+    color: #019585;
+}
+
+.text-16 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    color: #121212;
+    opacity: 0.6;
+}
+
+.text-17 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #121212;
+}
+
+.star {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #eb5757;
+}
+
+.form-control {
+    height: 50px;
+    box-shadow: none;
+    caret-color: black;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    padding-left: 23px;
+    border: 1px solid #e0e0e0 !important;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #121212;
+    opacity: 0.7;
+
+}
+
+.form-select {
+    padding-left: 25px;
+    height: 50px;
+    background-color: #f5f7f9;
+    border-radius: 10px;
+    box-shadow: none;
+    border: 1px solid #e0e0e0 !important;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #121212;
+    opacity: 0.7;
+}
+
+.basic-detail {
+    height: 35px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.image-parent {
+    position: relative;
+}
+
+.dl8-icon {
+    position: absolute;
+    top: 25px;
+    left: 28px;
+}
+
+.card-Height {
+    height: 135px;
+    border: 1px solid #E0E0E0;
+    border-radius: 15.8722px;
+    box-shadow: none;
+}
+
+::placeholder {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: black;
+
+}
+
+.text-area::placeholder {
+
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: -0.01em;
+    color: #121212;
+    opacity: 0.7;
+
+}
+
+.btn-add {
+    border: none;
+    background: none;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    letter-spacing: -0.02em;
+    color: #121212;
+    opacity: 0.7;
+
+}
+
+.mb-10 {
+    margin-bottom: 10rem;
+}
+
+.addJob {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    color: #FFFFFF;
+}
+
+.addjobButton {
+    background-color: #019585;
+    height: 135px;
+    border: 1px solid #E0E0E0;
+    border-radius: 15.8722px;
+    box-shadow: none;
+}
+
+ul{
+    margin-left: 0.6rem;
+}
+
+
+// Media Queries
+
+
+
+
+@media only screen and (min-width:768px) and (max-width:800px) {
+
+    .job-button2 {
+        font-size: 14px !important;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 1200px) {
+    .text-7 {
+        font-size: 14px !important;
+    }
+
+    .text-8 {
+
+        font-size: 12px !important;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .text-2 {
+        
+        font-size: 22px !important;
+        
+    }
+
+    .text-7 {
+        font-size: 13px !important;
+    }
+
+    .text-8 {
+        font-size: 10px !important;
+    }
+
+    ul {
+        margin-left: 0rem !important ;
+    }
+
+    .job-button2 {
+
+        font-size: 13px !important;
+    }
+
+    .text-9 {
+        font-size: 13px;
+    }
+
+}
+
+@media only screen and (max-width: 320px) {
+
+    .add-job-image {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    .addJob{
+        font-size: 15px !important;
+    }
+}

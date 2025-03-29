@@ -1,0 +1,20 @@
+<div class="user-wrapper-container">
+  <div class="user-toolbar mt-3">
+    <div class="mobile-nav-container">
+      <img src="assets/images/nav-bar-icon.jfif" [class.show]="!expand" [class.hide]="expand" alt=""
+        (click)="expand = true" height="20px" width="25px" />
+      <img src="assets/images/times-icon.jfif" [class.show]="expand" [class.hide]="!expand" alt=""
+        (click)="expand = false" height="25px" width="25px" />
+
+      <div class="right-container" [class.show]="expand" [class.hide]="!expand">
+        <div class="fortcel-mig-mere-container" [class.hide-fortcel-mig-mere-container]="!showList">
+          <div class="column">
+            <div class="d-flex flex-column" style="margin-top: -150px">
+              <app-sidenav></app-sidenav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,136 @@
+<div class="coaching-results-conatiner">
+
+    <div class="col-12 mt-4 mb-xl-0 mb-4 d-center">
+        <form class="search-form d-flex flex-column  col-12 col-md-10  col-lg-11">
+            <div class="row justify-content-md-start justify-content-center">
+                <div class="form-group col-lg-3 col-md-6 col-sm-7 col-11">
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Search by name role or category" />
+                    <img src="assets/images/search-normal.png" alt="search-icon" class="input-image" />
+                </div>
+                <div class="col-lg-2  col-md-6 col-sm-7 col-11">
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="" disabled selected>Category</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <img src="assets/images/task-square.png" alt="Image Description" class="select-image" />
+                </div>
+
+                <div class="col-lg-2  col-md-6 col-sm-7  col-11">
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="" disabled selected>Type</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <img src="assets/images/calendar-2.png" alt="Image Description" class="select-image" />
+                </div>
+
+                <div class="col-lg-2  col-md-6 col-sm-7  col-11">
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="" disabled selected>Budget</option>
+                        <option value="1">10</option>
+                        <option value="2">20</option>
+                        <option value="3">30</option>
+                    </select>
+                    <img src="assets/images/dollar-circle.png" alt="Budget-icon" class="select-image" />
+                </div>
+                <div class="col-lg-3  col-md-6 col-sm-7 col-11">
+                    <button type="button" class="search-button w-100">Search</button>
+                </div>
+
+
+            </div>
+
+        </form>
+    </div>
+
+    <div class="col-12 d-center">
+
+        <div class="col-11">
+            <div class="row">
+                <div class="col-xl-4 col-md-6 col-12 mb-4 mt-1" *ngFor="let item of listCandidate">
+                    <div class="coach-card p-3" style="border:1px solid #E4E4E4">
+                        <div class="row justify-content-between dp-container">
+                            <div class="d-flex flex-row col-lg-9 col-8">
+                                <div (click)="openCandidatedetail()" style="cursor: pointer;">
+                                    <img src="{{ item.dp }}" alt="dp" />
+                                </div>
+                                <div class="d-flex flex-column justify-content-center ms-3 col-lg-9 col-md-8">
+                                    <span class="text-1 mb-1">{{item.name}}</span>
+                                    <span class="text-2">{{item.profession}}</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-4 d-flex flex-row align-items-center justify-content-end ">
+                                <img src="{{ item.linkedin }}" alt="linked-in logo" class="mx-2 linkedin" />
+                                <img src="{{ item.world }}" alt="world logo" class=" world" />
+                            </div>
+
+                        </div>
+                        <div class="row justify-content-between mt-4">
+                            <div class="col-sm-6 col-4">
+                                <span class="text-3"> {{item.experience}} </span>
+                            </div>
+                            <div class="col-sm-6 col-8 d-flex justify-content-end">
+                                <span class="text-4">{{item.duration}}</span>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-sm-6 col-4">
+                                <span class="text-3"> {{ item.openTo}}</span>
+                            </div>
+                            <div class="col-sm-6 col-8 d-flex justify-content-end">
+                                <button type="button" class="btn"> {{item.time}} </button>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-between mt-4">
+                            <div class="col-xl-5 col-lg-3 col-3">
+                                <span class="text-3"> {{item.skills}} </span>
+                            </div>
+                            <div class="col-xl-7 col-lg-9 col-9 d-flex flex-row justify-content-end">
+                                <span class="text-5">{{item.skill1}}</span>
+                                <span class="text-5 ms-2">{{item.skill2}}</span>
+
+                            </div>
+                        </div>
+                        <div class="row justify-content-between mt-4 ">
+                            <div class="col-xxl-3 col-xl-4  col-4 row g-0">
+                                <div class="logo-container  col-4 ">
+                                    <img src="{{ item.archive }}" alt="archive logo" />
+                                </div>
+                                <div class="logo-container col-4   ms-3">
+                                    <img src="{{ item.save }}" alt="save logo" />
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-9 col-xl-8  col-8" >
+                                <button type="button" class="btn-invite w-100"> Invite Now </button>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="d-flex justify-content-center spinner mt-1 mb-4">
+                <mat-spinner [diameter]="40"></mat-spinner>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+</div>

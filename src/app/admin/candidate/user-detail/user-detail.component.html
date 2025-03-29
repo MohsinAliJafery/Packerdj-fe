@@ -1,0 +1,230 @@
+<div class="d-flex flex-column align-items-center">
+  <div class="container-fluid">
+    <div class="row ps-4">
+      <div>
+        <div class="d-flex">
+          <div class="col-4">
+            <h1>Name</h1>
+            <h2>
+              {{ detailList?.firstName + " " + detailList?.lastName }}
+            </h2>
+          </div>
+
+          <div class="col-4 d-flex align-items-center">
+            <div
+              *ngIf="detailList?.profile?.file"
+              style="width: 150px; height: 150px"
+            >
+              <img
+                [src]="baseURL + detailList.profile.file.path"
+                class="w-100 h-100"
+                style="border-radius: 100px"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-2">
+          <h2>Email</h2>
+          <h3>{{ detailList?.email }}</h3>
+        </div>
+
+        <div class="mt-2" *ngIf="detailList?.profile?.gender">
+          <h2>Gender</h2>
+          {{ detailList.profile.gender }}
+        </div>
+
+        <div class="mt-2" *ngIf="detailList?.profile?.bio">
+          <h2>Bio</h2>
+          {{ detailList.profile.bio }}
+        </div>
+      </div>
+      <span class="text mt-5">Resume List</span>
+      <div class="d-flex flex-column col-11 col-xl-10 mb-5">
+        <mat-card
+          class="d-flex flex-column matcard col-12 py-4 mt-4"
+          *ngFor="let resume of detailList?.profile?.resumes"
+        >
+          <div
+            class="d-flex flex-lg-row flex-column justify-content-lg-between align-items-start col-12"
+          >
+            <div
+              class="d-flex flex-sm-row flex-column col-xxl-6 col-xl-7 col-lg-6 col-sm-11 col-12 align-items-sm-center align-items-start mx-sm-4 mx-0"
+            >
+              <div
+                class="d-flex row gx-0 justify-content-center align-items-center mx-sm-0 mx-3"
+              >
+                <img
+                  src="assets/images/upload.png"
+                  alt="logo"
+                  class="logo"
+                  style="
+                    height: auto;
+                    width: 60px;
+                    object-fit: contain;
+                    border-radius: 10px;
+                  "
+                />
+              </div>
+
+              <div
+                class="d-flex flex-column col-xxl-9 col-xl-10 justify-content-between"
+              >
+                <span class="text-2 mx-xl-4 mx-sm-4 mx-3 mt-sm-0 mt-2">{{
+                  resume?.data?.originalname
+                }}</span>
+              </div>
+            </div>
+
+            <div
+              class="d-flex flex-column align-items-end mx-3 col-xl-4 col-lg-5 col-11 mt-sm-0 mt-2"
+            >
+              <div classs="d-flex flex-row">
+                <img
+                  src="assets/images/job-calendar.png"
+                  alt="icon"
+                  class="calenderIcon mb-1"
+                />
+                <span class="text-3">
+                  Upload at
+                  {{ resume.uploadedAt | date : "dd MMMM yyyy, hh.mm a" }}</span
+                >
+              </div>
+
+              <a
+                type="button"
+                class="download-button col-2 mt-2"
+                (click)="downloadPdf(resume.data)"
+              >
+                <img
+                  src="assets/images/document-download.png"
+                  alt="icon"
+                  class="mx-2"
+                />
+                Download
+              </a>
+            </div>
+          </div>
+        </mat-card>
+        <h2 *ngIf="!detailList?.profile?.resumes?.length">No result found</h2>
+      </div>
+
+      <div
+        class="d-flex flex-column col-11 col-xl-10 mt-5 appliedJob-container"
+        id="section1"
+      >
+        <span class="text-4">Jobs applied recently</span>
+        <mat-card
+          class="d-flex flex-column matcard col-12 py-5 mt-4"
+          *ngFor="let job of appliedjobsList"
+        >
+          <div
+            class="d-flex flex-md-row flex-column justify-content-lg-between align-items-start col-12"
+          >
+            <div
+              class="d-flex flex-sm-row flex-column col-xxl-6 col-md-6 col-sm-8 col-12 align-items-sm-center align-items-start mx-sm-4 mx-0"
+            >
+              <div
+                class="d-flex row gx-0 justify-content-center align-items-center mx-sm-0 mx-3"
+              >
+                <img
+                  [src]="baseURL + job?.userDetails?.companyProfilePic?.path"
+                  alt="logo"
+                  style="
+                    height: auto;
+                    width: 60px;
+                    object-fit: contain;
+                    border-radius: 10px;
+                  "
+                />
+              </div>
+
+              <div
+                class="d-flex flex-column col-xxl-9 col-xl-10 justify-content-between"
+              >
+                <span class="text-5 mx-xl-4 mx-sm-4 mx-3 mt-sm-0 mt-2">{{
+                  job.userDetails?.title
+                }}</span>
+                <div
+                  class="d-flex flex-row justify-content-start align-items-center col-12"
+                >
+                  <span class="text-6 mx-xl-4 mx-sm-4 mx-3 mt-2">{{
+                    job.userDetails?.companyName
+                  }}</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="d-flex flex-column align-items-end col-xl-4 col-lg-4 col-md-5 col-11 mt-sm-0 mt-4"
+            >
+              <div class="d-flex align-items-start flex-row">
+                <img src="assets/images/job-calendar.png" alt="icon" />
+                <span class="text-7 mx-1">
+                  Send at
+                  {{ job.createdAt | date : "dd MMMM yyyy, hh.mm a" }}</span
+                >
+              </div>
+
+              <div class="d-flex flex-row align-items-center mt-2">
+                <span
+                  [ngClass]="
+                    job.job_status == 'Not in accordance'
+                      ? 'job-button2'
+                      : 'job-button'
+                  "
+                  >{{ job.job_status }}</span
+                >
+                <div class="dot mx-2" *ngIf="job.userDetails.status"></div>
+                <span class="text-9" *ngIf="job.userDetails.status">{{
+                  job.userDetails.status
+                }}</span>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+        <h2 *ngIf="!appliedjobsList?.length" class="my-4">No result found</h2>
+        <!-- <div
+      class="d-flex justify-content-center"
+      *ngIf="totalAppliedJobs?.length > 2"
+    >
+      <button
+        *ngIf="!hideAllBtn"
+        type="button"
+        class="asset-button mt-4 mb-5"
+        (click)="showAll()"
+      >
+        Show more jobs
+      </button>
+    </div> -->
+      </div>
+
+      <!-- <nav
+    aria-label="Page navigation"
+    *ngIf="appliedjobsList?.length"
+    class="mt-4"
+  >
+    <ul class="pagination">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <a class="page-link" (click)="changePage(currentPage - 1)">Previous</a>
+      </li>
+
+      <li
+        class="page-item"
+        *ngFor="let page of pageNumbers"
+        [class.active]="currentPage === page"
+      >
+        <a class="page-link" *ngIf="page !== -1" (click)="changePage(page)">{{
+          page
+        }}</a>
+        <a class="page-link" *ngIf="page === -1">&hellip;</a>
+      </li>
+
+      <li class="page-item" [class.disabled]="currentPage === totalPages">
+        <a class="page-link" (click)="changePage(currentPage + 1)">Next</a>
+      </li>
+    </ul>
+  </nav> -->
+    </div>
+  </div>
+</div>

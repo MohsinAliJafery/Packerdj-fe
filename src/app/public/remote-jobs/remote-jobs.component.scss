@@ -1,0 +1,282 @@
+.sub-parent-container {
+  padding: 3% 0 10% 0;
+
+  .text-1 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 132%;
+    color: #121212;
+  }
+
+  .text-2 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 10px !important;
+    color: white;
+    display: inline-block;
+    padding: 10px 0 10px 0;
+    height: 45px;
+    background-color: #019585;
+  }
+
+  .text-3 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 160%;
+    letter-spacing: 0.02em;
+    color: #121212;
+    opacity: 0.6;
+  }
+
+  .text-4 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #121212;
+    opacity: 0.8;
+  }
+}
+
+.second-container {
+  background-color: #f8fbfa;
+
+  .text-5 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 132%;
+    text-align: center;
+    color: #121212;
+  }
+
+  .text-6 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 160%;
+    letter-spacing: 0.02em;
+    color: #121212;
+    opacity: 0.6;
+  }
+
+  .form-control {
+    height: 50px;
+    // width: 185px;
+    box-shadow: none;
+    border: none;
+    caret-color: #019585;
+    background-color: #eff4f4;
+    border-radius: 10px;
+    padding-left: 45px;
+  }
+
+  .form-control:focus {
+    box-shadow: 4px 4px 20px rgba(1, 149, 133, 0.15);
+    border: 1px solid #019585;
+  }
+
+  .form-group .input-image {
+    position: relative;
+    left: 15px;
+    bottom: 36px;
+  }
+
+  .select-image {
+    position: relative;
+    left: 15px;
+    bottom: 36px;
+  }
+
+  .form-select {
+    padding-left: 45px;
+    height: 50px;
+    background-color: #e4edec;
+    border-radius: 10px;
+    border: none;
+    box-shadow: none;
+    color: #121212;
+  }
+
+  .form-select.type-select {
+    padding-left: 45px;
+    height: 50px;
+    background-color: #e7edec;
+    border-radius: 10px;
+    border: none;
+    color: #121212;
+  }
+
+  ::placeholder {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 151.5%;
+    color: #121212;
+    opacity: 0.4;
+  }
+
+  .search-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    height: 55px;
+    background: #019585;
+    box-shadow: 0px 0px 0px rgba(1, 149, 133, 0.15);
+    border-radius: 10px;
+    border: none;
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 151.5%;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+  }
+}
+
+.text-11 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 132%;
+  text-align: center;
+  color: #121212;
+}
+
+.text-12 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 132%;
+  color: #121212;
+}
+
+.text-13 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0.01em;
+  color: #121212;
+  opacity: 0.7;
+}
+
+.padding-text {
+  padding: 10% 0 5% 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .text-11 {
+    font-size: 40px !important;
+  }
+
+  .text-12 {
+    font-size: 20px !important;
+  }
+
+  .text-13 {
+    font-size: 14px !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .text-11 {
+    font-size: 35px !important;
+  }
+
+  .text-12 {
+    font-size: 18px !important;
+  }
+
+  .text-13 {
+    font-size: 12px !important;
+  }
+
+  .text-5 {
+    font-size: 35px !important;
+  }
+
+  .text-4 {
+    font-size: 12px !important;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .text-5 {
+    font-size: 37px !important;
+  }
+
+  .carousel-div {
+    border-radius: 20px;
+    max-width: 450px !important;
+    max-height: 420px !important;
+    // border: 5px solid red;
+  }
+
+  .custom-class {
+    display: flex;
+    justify-content: center !important;
+    align-items: start !important;
+    height: 420px;
+    // border: 1px solid rgb(0, 38, 255);
+  }
+
+  // .video-container {
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+  //     max-height: 470px !important;
+  //     max-width: 470px !important;
+  //     border-radius: 20px;
+  //     border: 1px solid red
+  // }
+}
+
+video {
+  border-radius: 20px;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 600px;
+  max-width: 600px;
+  border-radius: 20px;
+  // border: 1px solid red
+}
+
+.carousel-div {
+  border-radius: 20px;
+  max-width: 500px;
+  max-height: 370px;
+  // border: 1px solid red
+}
+
+.custom-class {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 420px;
+}
+
+.sliding-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}

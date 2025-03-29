@@ -1,0 +1,300 @@
+.padding {
+  padding: 5% 0 10% 0;
+}
+
+.button-1 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 132%;
+  color: #ff801c;
+  opacity: 0.6;
+  border: none;
+  width: auto;
+}
+
+.button-2 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 132%;
+  color: #554bff;
+  opacity: 0.6;
+  border: none;
+  width: auto;
+}
+
+.text-1 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 132%;
+  color: #121212;
+}
+
+.text-2 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 178%;
+  letter-spacing: 0.01em;
+  color: #121212;
+  opacity: 0.8;
+}
+
+.salary-info {
+  border: 1px solid #019585;
+  border-radius: 10px;
+}
+
+.profile-text {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 100;
+  font-size: 17px;
+  line-height: 160%;
+  letter-spacing: 0.02em;
+  color: #121212;
+}
+
+.text-3 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 160%;
+  letter-spacing: 0.02em;
+  color: #121212;
+}
+
+.text-4 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 181%;
+  letter-spacing: 0.02em;
+  color: #121212;
+}
+
+.text-5 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 160%;
+  letter-spacing: 0.02em;
+  color: #121212;
+}
+
+.apply-button {
+  // width: 319px;
+  height: 60px;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 132%;
+  color: #ffffff;
+  background: #019585;
+  box-shadow: 5px 5px 20px rgba(1, 149, 133, 0.13);
+  border-radius: 10px;
+  border: none;
+  margin-top: 18%;
+}
+
+.apply-job {
+  position: relative;
+  width: 443px;
+  height: 387px;
+  left: 0px;
+  top: 67px;
+  background: #f9fcfc;
+  border: 1px solid #019585;
+  box-shadow: 5px 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
+}
+
+.logo {
+  position: absolute;
+  z-index: 1;
+  top: -50px;
+  left: 160px;
+}
+
+.text-6 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 132%;
+  color: #121212;
+}
+
+.text-7 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 132%;
+  color: #121212;
+  opacity: 0.8;
+}
+
+.text-8 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.01em;
+  color: #121212;
+}
+
+.text-9 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #121212;
+  opacity: 0.7;
+}
+
+.text-10 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 132%;
+  color: #121212;
+}
+
+.resume-card {
+  background: #ffffff;
+  // border: 1.08908px solid #e0e0e0;
+  border-radius: 16.3362px;
+  cursor: pointer;
+}
+.apply-resume {
+  background: #019585;
+  border-radius: 10px;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  border: none;
+  height: 52px;
+}
+
+.img-logo {
+  border-radius: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .secondContainer {
+    padding-bottom: 10%;
+  }
+
+  .text-1 {
+    font-size: 38px;
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .text-1 {
+    font-size: 42px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .secondContainer {
+    padding-bottom: 15%;
+  }
+
+  .text-1 {
+    font-size: 38px;
+  }
+
+  .img-logo {
+    height: 100px;
+    width: 100px;
+  }
+
+  .logo {
+    position: absolute;
+    z-index: 1;
+    top: -50px;
+    left: 170px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .secondContainer {
+    padding-bottom: 25%;
+  }
+
+  .text-1 {
+    font-size: 30px;
+  }
+
+  .logo {
+    position: absolute;
+    z-index: 1;
+    top: -50px;
+    left: 110px;
+  }
+
+  .img-logo {
+    height: 75px;
+    width: 75px;
+  }
+
+  .apply-job {
+    position: relative;
+    width: 300px;
+    height: 287px;
+    left: 0px;
+    top: 67px;
+    background: #f9fcfc;
+    border: 1px solid #019585;
+    box-shadow: 5px 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .logo {
+    position: absolute;
+    z-index: 1;
+    top: -50px;
+    left: 80px;
+  }
+
+  .img-logo {
+    height: 75px;
+    width: 75px;
+  }
+
+  .apply-job {
+    position: relative;
+    width: 230px;
+    height: 287px;
+    left: 0px;
+    top: 67px;
+    background: #f9fcfc;
+    border: 1px solid #019585;
+    box-shadow: 5px 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+  }
+}

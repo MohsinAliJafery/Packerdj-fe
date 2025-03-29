@@ -1,0 +1,139 @@
+.login-container {
+    // width: 45%;
+    padding: 30px;
+    box-shadow: rgb(0 0 0 / 16%) 0 0.0625rem 0.25rem 0;
+    border-radius: 10px;
+    background: white;
+}
+
+.login-button {
+    box-shadow: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 24px;
+    gap: 4px;
+    width: 127px;
+    height: 54px;
+    background: #019585;
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+}
+
+.add_button {
+    box-shadow: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 24px;
+    gap: 4px;
+    width: 127px;
+    height: 54px;
+    background: white;
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    color: black;
+    border: 1px solid rgba(203, 200, 200, 0.819);
+}
+.select-button {
+    box-shadow: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 18px;
+    gap: 4px;
+    width: 110px;
+    height: 25px;
+    background: #019585;
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: white;
+    border: 1px solid rgba(203, 200, 200, 0.819);
+}
+
+.form-control {
+    height: 50px;
+    box-shadow: none;
+    caret-color: #019585;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.form-select {
+    height: 50px;
+    box-shadow: none;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.form-select:focus {
+    border: 1px solid #019585;
+}
+
+
+.form-control:focus {
+    box-shadow: 4px 4px 20px rgba(1, 149, 133, 0.15);
+    border: 1px solid #019585;
+}
+
+.text-area {
+    height: 100px;
+}
+
+.inputLabel {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 151.5%;
+    color: #121212;
+}
+
+.main-heading {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 151.5%;
+    color: #121212;
+}
+
+.d-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.form-check-input[type=checkbox]:checked:after {
+    display: none;
+    
+}
+
+
+
+
+  
+  
+
+ 

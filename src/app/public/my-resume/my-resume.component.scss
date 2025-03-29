@@ -1,0 +1,107 @@
+.upDate-resume {
+  margin-top: 10rem;
+}
+
+.text {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  color: #121212;
+}
+
+.resume-button {
+  width: 227px;
+  color: #121212;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  border: none;
+  background: #019585;
+  border-radius: 8px;
+  height: 44px;
+  position: relative;
+  overflow: hidden;
+}
+.resume-button input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 0;
+}
+.download-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 40px;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16.3362px;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+  color: #019585;
+  border: 1px solid #019585;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.matcard {
+  border: 1.08908px solid #e0e0e0;
+  border-radius: 16.3362px;
+  box-shadow: none;
+}
+
+.text-2 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 132%;
+  color: #121212;
+}
+
+.text-3 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 132%;
+  color: #121212;
+  opacity: 0.7;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 1200px) {
+  .text-3 {
+    font-size: 14px !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .text-2 {
+    font-size: 13px;
+  }
+
+  .text-3 {
+    font-size: 11px !important;
+  }
+
+  .logo {
+    width: 40px !important;
+  }
+
+  .calenderIcon {
+    width: 18px;
+  }
+}

@@ -1,0 +1,455 @@
+<div class="coaching-detail-container my-5" *ngIf="coach">
+  <div class="d-flex align-items-center dp-container">
+    <div class="profile-pic ms-2 ms-md-4 ms-xl-5">
+      <img
+        *ngIf="coach?.file?.path"
+        [src]="baseURL + coach.file.path"
+        alt="coaches-img"
+        class="h-100 w-100"
+      />
+    </div>
+    <div class="row g-0 w-100 ps-4 intro-container">
+      <div class="col-12 col-md-9 col-lg-10">
+        <h1>{{ coach.fullName }}</h1>
+        <h2>{{ coach.designation }}<span> at </span>{{ coach.company }}</h2>
+      </div>
+      <!-- <div
+        class="col-12 col-md-3 col-lg-2 d-flex align-items-center justify-content-md-center"
+      >
+        <div>
+          <img src="assets/images/like-icon.png" alt="like-icon" />
+        </div>
+        <div class="ms-2 me-4 me-lg-5">
+          <img src="assets/images/detail-icon.png" alt="detail-icon" />
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+  <div class="row g-0 mt-5 ms-2 ms-md-3 ms-xl-4">
+    <div class="col-12 col-lg-6 gx-3 gx-md-5 mb-5 mb-lg-0">
+      <div class="Overview-container">
+        <div class="d-flex align-items-center">
+          <img src="assets/images/overview.png" alt="Overview-icon" />
+          <h1>Overview</h1>
+        </div>
+        <div class="mt-4">
+          <p>
+            {{ coach.description }}
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-6" id="w-sm-100" *ngIf="coach.expertise?.length">
+            <h2>Expertise</h2>
+            <div class="d-flex">
+              <span class="Expertise-1" *ngIf="coach.expertise[0]">
+                {{ coach.expertise[0] }}</span
+              >
+              <span class="Expertise-2 ms-2" *ngIf="coach.expertise[1]">{{
+                coach.expertise[1]
+              }}</span>
+            </div>
+          </div>
+          <div class="col-6" id="w-sm-100" *ngIf="coach.fluentIn?.length">
+            <h2>Fluent in</h2>
+            <div class="d-flex">
+              <span class="Languages" *ngIf="coach.fluentIn[0]">{{
+                coach.fluentIn[0]
+              }}</span>
+              <span class="Languages ms-2" *ngIf="coach.fluentIn[1]">{{
+                coach.fluentIn[1]
+              }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="Experience-container" *ngIf="coach.experiences?.length">
+        <div class="d-flex align-items-center">
+          <img src="assets/images/experience.png" alt="Experience-icon" />
+          <h1>Experience</h1>
+        </div>
+
+        <div class="row" *ngFor="let item of coach.experiences">
+          <div class="col-12 col-lg-6">
+            <h3>{{ item.title }}</h3>
+            <h4>{{ coach.company }}</h4>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="date-duration">
+              <h5>
+                {{ item.from | date : "MMM yyyy" | uppercase }} -
+                {{ item.to | date : "MMM yyyy" | uppercase }}
+              </h5>
+            </div>
+          </div>
+          <div class="col-12">
+            <h4 class="my-4">
+              {{ item.description }}
+            </h4>
+          </div>
+          <hr />
+        </div>
+      </div>
+
+      <div class="Education-container" *ngIf="coach.education?.length">
+        <div class="d-flex align-items-center">
+          <img src="assets/images/education.png" alt="Education-icon" />
+          <h1>Education</h1>
+        </div>
+
+        <div class="row" *ngFor="let item of coach.education">
+          <div class="col-12">
+            <h3>{{ item.title }}</h3>
+            <h4 class="d-flex align-items-center">
+              {{ item.institute }}
+              <div></div>
+              {{ item.from | date : "yyyy" }} - {{ item.to | date : "yyyy" }}
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-6 gx-3 gx-md-5">
+      <div class="coaching-service-card m-auto m-lg-0">
+        <h1>Coaching Service</h1>
+        <hr />
+        <div
+          *ngFor="let item of coach.coaching; let i = index"
+          class="inner-card d-center my-4"
+          (click)="selectService(item, i)"
+          [ngStyle]="
+            i == serviceValue
+              ? {
+                  border: '1px solid #019585',
+                  'box-shadow': '5px 5px 10px rgba(1, 149, 133, 0.1)'
+                }
+              : { border: '1px solid #e0e0e0' }
+          "
+        >
+          <div class="row g-0 w-100">
+            <span class="col-7" id="service-card-sm">
+              <h2>{{ item.title }}</h2>
+              <h4>{{ item.duration }} minutes</h4>
+            </span>
+            <div
+              class="col-5 d-flex align-items-center justify-content-end"
+              id="service-card-sm"
+            >
+              <span class="price-card">
+                <h6>Rp {{ item.charges }}</h6>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="row col-12 g-0"
+          (click)="OpenCoachingModal()"
+          *ngIf="coach.coaching?.length"
+        >
+          <button type="button" class="search-button">Book service</button>
+        </div>
+
+        <div *ngIf="!coach.coaching?.length">No Coaching services found</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #CoachingServiceModal let-modal>
+  <form class="SessionForm c-center" *ngIf="showSessionForm">
+    <div class="modal-body c-center">
+      <span class="d-flex justify-content-between">
+        <h1>Available sessions</h1>
+        <div>
+          <img
+            src="assets/images/close-circle.png"
+            alt="close-icon"
+            class="cursor-pointer"
+            (click)="CloseModel()"
+          />
+        </div>
+      </span>
+      <hr />
+
+      <div class="row g-0">
+        <div class="col-12 col-sm-10 d-flex flex-wrap">
+          <div
+            *ngFor="let item of coach.slot; let i = index"
+            class="session-card d-center flex-column me-3 mb-3"
+            (click)="selectDate(item, i)"
+            [ngStyle]="
+              i == cardValue
+                ? {
+                    border: '1px solid #019585',
+                    'box-shadow': '5px 5px 10px rgba(1, 149, 133, 0.1)'
+                  }
+                : { border: '1.5px solid #eff6f5' }
+            "
+          >
+            <h5>{{ item.date | date : "EEE" | uppercase }}</h5>
+            <h3>{{ item.date | date : "dd MMM yyyy" }}</h3>
+            <h6>{{ item.dateOccurences }}</h6>
+          </div>
+        </div>
+        <h3 *ngIf="!coach.slot?.length">No result found</h3>
+        <div
+          *ngIf="totalSlots?.length > 3 && viewAllBtn"
+          class="col-12 col-sm-2 d-flex justify-content-center view-btn-margin cursor-pointer"
+          (click)="ViewAllSlots()"
+        >
+          <p>View All</p>
+        </div>
+      </div>
+
+      <h4>Available time slots</h4>
+      <hr />
+
+      <div class="row g-0 mb-3 mt-4 flex-wrap">
+        <div
+          class="time-card me-3 mb-3"
+          *ngFor="let item of timeArray; let i = index"
+          [ngStyle]="
+            i == timeCardValue
+              ? {
+                  border: '1px solid #019585',
+                  'box-shadow': '5px 5px 10px rgba(1, 149, 133, 0.1)'
+                }
+              : { border: '1.5px solid #eff6f5' }
+          "
+          (click)="selectTime(item, i)"
+        >
+          <h2>{{ item }}</h2>
+        </div>
+        <h3 *ngIf="!timeArray?.length">No result found</h3>
+      </div>
+      <div class="row g-0 col-12 mb-4">
+        <button
+          type="button"
+          class="search-button"
+          (click)="onBookSessionClick()"
+        >
+          Book session for {{ selectedDate | date : "dd MMM yyyy" }}
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <form class="SessionForm c-center" *ngIf="infoForm" [formGroup]="bookingForm">
+    <div class="modal-body c-center">
+      <span class="d-flex align-items-center">
+        <div class="p-1 pe-3">
+          <img
+            src="assets/images/arrow-left.png"
+            alt="back-icon"
+            class="cursor-pointer"
+            (click)="goToSessionForm()"
+          />
+        </div>
+        <h1>Your Information</h1>
+      </span>
+      <hr />
+
+      <div class="form-group">
+        <label for="Name">Name <img src="assets/images/asterik.png" /></label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          formControlName="name"
+          placeholder="Enter your name"
+        />
+      </div>
+      <div
+        *ngIf="
+          bookingForm.controls['name'].invalid &&
+          bookingForm.controls['name'].touched
+        "
+        class="text-danger mt-2"
+      >
+        Name is required
+      </div>
+
+      <div class="form-group">
+        <label for="email"
+          >Email Address <img src="assets/images/asterik.png"
+        /></label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          formControlName="email"
+          aria-describedby="email"
+          placeholder="Enter your email address"
+        />
+      </div>
+
+      <div
+        *ngIf="
+          bookingForm.controls['email'].invalid &&
+          bookingForm.controls['email'].touched
+        "
+        class="text-danger mt-2"
+      >
+        Email is required
+      </div>
+
+      <div class="form-group">
+        <label for="phone"
+          >Phone Number <img src="assets/images/asterik.png"
+        /></label>
+        <input
+          type="text"
+          class="form-control"
+          id="phone"
+          formControlName="phone"
+          placeholder="0812-3456-7899"
+        />
+      </div>
+
+      <div
+        *ngIf="
+          bookingForm.controls['phone'].invalid &&
+          bookingForm.controls['phone'].touched
+        "
+        class="text-danger mt-2"
+      >
+        Phone is required
+      </div>
+
+      <div class="form-group row g-0 w-100 textarea">
+        <label for="note">Note <img src="assets/images/asterik.png" /></label>
+        <textarea
+          class="form-control"
+          name="note"
+          id="note"
+          formControlName="note"
+          placeholder="Enter note details"
+        ></textarea>
+        <div
+          *ngIf="
+            bookingForm.controls['note'].invalid &&
+            bookingForm.controls['note'].touched
+          "
+          class="text-danger mt-2"
+        >
+          Note is required
+        </div>
+      </div>
+
+      <div class="row g-0 col-12 mb-4">
+        <button
+          type="button"
+          class="search-button"
+          (click)="onBookingSummaryClick()"
+        >
+          Booking Summary
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div class="SessionForm c-center" *ngIf="PaymentCard">
+    <div class="modal-body PaymentCard-body c-center">
+      <span class="d-flex align-items-center">
+        <div class="p-1 pe-3">
+          <img
+            src="assets/images/arrow-left.png"
+            alt="back-icon"
+            class="cursor-pointer"
+            (click)="goToBookingForm()"
+          />
+        </div>
+        <h1>Payment</h1>
+      </span>
+      <hr />
+      <div class="mt-4">
+        <h6>Customer</h6>
+        <p>{{ bookingForm.value.name }}</p>
+        <h6>Coaching Service</h6>
+        <p>{{ selectedService.title }}</p>
+        <h6>Date & Time</h6>
+        <p>{{ selectedDate | date : "dd MMM yyyy" }}, {{ selectedTime }}</p>
+        <h6>Payment Method</h6>
+        <div
+          class="receipt-card-1 mb-3 d-flex align-items-center justify-content-between"
+          [ngStyle]="
+            paymentCardValue == 1
+              ? {
+                  border: '1px solid #019585'
+                }
+              : { border: '1px solid #e0e0e0' }
+          "
+          (click)="onPaypalClick(1)"
+        >
+          <span class="d-flex me-3">
+            <div class="me-3 mt-1">
+              <img src="assets/images/shop.png" />
+            </div>
+            <h5>Manual Transfer</h5>
+          </span>
+          <div>
+            <img src="assets/images/complete-icon.png" />
+          </div>
+        </div>
+        <div
+          class="receipt-card-2"
+          (click)="onPaypalClick(2)"
+          [ngStyle]="
+            paymentCardValue == 2
+              ? {
+                  border: '1px solid #019585'
+                }
+              : { border: '1px solid #e0e0e0' }
+          "
+        >
+          <span class="d-flex">
+            <div class="me-3">
+              <img src="assets/images/paypal.png" />
+            </div>
+            <h5>Paypal</h5>
+          </span>
+        </div>
+
+        <div class="total-payment">
+          <h6>Total Payment</h6>
+          <h3>Rp. {{ selectedService.charges }}</h3>
+        </div>
+        <div *ngIf="paymentCardValue == 2">
+          <app-paypal
+            [charges]="selectedService.chargesInUSD"
+            (closeDialog)="catchResponse($event)"
+          ></app-paypal>
+        </div>
+        <div class="row g-0 col-12 mb-4">
+          <button type="button" class="search-button" (click)="addBooking()">
+            Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="SessionForm c-center" *ngIf="CompletionCard">
+    <div class="modal-body c-center">
+      <div class="d-flex justify-content-end me-3">
+        <img
+          src="assets/images/close-circle.png"
+          alt="close-icon"
+          class="cursor-pointer"
+          (click)="CloseModel()"
+        />
+      </div>
+
+      <div class="d-center my-5">
+        <img src="assets/images/completed-gif.gif" class="completed-gif" />
+      </div>
+      <h6 class="completed-text mb-5">
+        “Thank You For Choosing Our Service(s). You Will Receive Details About
+        The Next Step In Your Email Shortly.”
+      </h6>
+    </div>
+  </form>
+</ng-template>

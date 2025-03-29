@@ -1,0 +1,516 @@
+.dp-container {
+  margin-top: 9rem;
+}
+.profile-pic {
+  width: 150px;
+  min-width: 150px;
+  height: 150px;
+  img {
+    border-radius: 50%;
+  }
+}
+
+.intro-container {
+  h1,
+  h2,
+  span {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    color: #121212;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 40px;
+  }
+  h2 {
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 25px;
+    span {
+      font-weight: 500;
+      font-size: 1.3rem;
+      line-height: 25px;
+      opacity: 0.5;
+    }
+  }
+}
+
+.Overview-container {
+  h1,
+  h2,
+  p {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    line-height: 25px;
+    color: #121212;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin: 0 0 0 10px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.5rem;
+  }
+  h2 {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 165%;
+    letter-spacing: 0.02em;
+    opacity: 0.7;
+  }
+  .Expertise-1,
+  .Expertise-2,
+  .Languages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    width: fit-content;
+
+    border-radius: 5px;
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    opacity: 0.6;
+  }
+  .Languages {
+    font-weight: 700;
+    font-size: 0.87rem;
+    line-height: 18px;
+    color: #121212;
+    border: 1px solid #e0e0e0;
+  }
+  .Expertise-1 {
+    font-weight: 800;
+    font-size: 0.87rem;
+    line-height: 18px;
+    color: #ff801c;
+    background: #ecebff;
+  }
+  .Expertise-2 {
+    font-weight: 800;
+    font-size: 0.87rem;
+    line-height: 18px;
+    color: #554bff;
+    background: #f9f2eb;
+  }
+}
+
+.Experience-container {
+  margin-top: 3rem;
+  h1,
+  h3,
+  h4,
+  h5,
+  p {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    color: #121212;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 25px;
+    margin: 0 0 0 10px;
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 25px;
+    opacity: 0.8;
+    margin: 1.8rem 0 0.5rem 0;
+  }
+
+  h4 {
+    font-weight: 500;
+    font-size: 0.93rem;
+    line-height: 160%;
+    opacity: 0.8;
+  }
+
+  h5 {
+    font-weight: 500;
+    font-size: 0.8rem;
+    line-height: 15px;
+    opacity: 0.8;
+    margin: 0;
+  }
+  .date-duration {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 6px 16px;
+    width: fit-content;
+    background: #f3f9f8;
+    border-radius: 3px;
+    margin: 2rem 0 0.5rem 0;
+  }
+}
+
+.Education-container {
+  margin-top: 2rem;
+  h1,
+  h3,
+  h4 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    color: #121212;
+    opacity: 0.8;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 25px;
+    margin: 0 0 0 10px;
+    opacity: 1;
+  }
+  h4 {
+    font-weight: 500;
+    font-size: 0.93rem;
+    line-height: 19px;
+    div {
+      width: 5px;
+      height: 5px;
+      background: #bdbdbd;
+      border-radius: 50%;
+      margin: 0 8px;
+    }
+  }
+  h3 {
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 25px;
+    margin: 2.5rem 0 0.5rem 0;
+  }
+}
+
+.coaching-service-card {
+  box-sizing: border-box;
+  max-width: 700px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
+  padding: 2.2rem;
+
+  h1 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    line-height: 25px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+  }
+
+  .inner-card {
+    box-sizing: border-box;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 18px 14px 16px 16px;
+
+    h2,
+    h4,
+    h6 {
+      font-family: "Plus Jakarta Sans";
+      font-style: normal;
+      line-height: 19px;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 0.93rem;
+      color: #121212;
+      margin-bottom: 10px;
+    }
+    h4 {
+      color: #121212;
+      font-weight: 500;
+      font-size: 0.93rem;
+      margin: 0;
+    }
+
+    .price-card {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 6px 16px;
+      width: fit-content;
+      background: #019585;
+      border-radius: 5px;
+
+      h6 {
+        font-weight: 700;
+        font-size: 0.75rem;
+        line-height: 15px;
+        letter-spacing: -0.01em;
+        color: #ffffff;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.SessionForm {
+  h1 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    color: #121212;
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 25px;
+    margin: 0;
+  }
+  .session-card {
+    width: fit-content;
+    min-width: 90px;
+    // height: 88px;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 13px;
+
+    h3,
+    p,
+    h5,
+    h6 {
+      font-family: "Plus Jakarta Sans";
+      font-style: normal;
+      color: #121212;
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 20px;
+      margin: 6px 0 9px 0;
+    }
+
+    h5 {
+      font-weight: 500;
+      font-size: 0.75rem;
+      line-height: 15px;
+      margin: 0;
+    }
+    h6 {
+      font-weight: 700;
+      font-size: 0.75rem;
+      line-height: 15px;
+      color: #019585 !important;
+      margin: 0;
+    }
+  }
+
+  p {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 18px;
+    color: #019585;
+    margin: 0;
+  }
+  h4 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 20px;
+    color: #121212;
+    margin-top: 2rem;
+  }
+  .time-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 14px 28px;
+    width: fit-content;
+    min-height: 51px;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 10px;
+    h2 {
+      font-family: "Plus Jakarta Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1.125rem;
+      line-height: 23px;
+      color: #121212;
+      margin: 0;
+    }
+  }
+
+  .form-group {
+    margin-top: 25px;
+
+    label {
+      font-family: "Plus Jakarta Sans";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 20px;
+      color: #121212;
+      margin-bottom: 12px;
+      img {
+        margin-bottom: 8px;
+      }
+    }
+    .form-control {
+      box-shadow: none;
+      padding: 10px;
+    }
+
+    .form-control:focus {
+      box-shadow: none;
+    }
+  }
+
+  input,
+  textarea {
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 10px !important;
+  }
+  textarea {
+    min-height: 130px;
+    padding: 10px;
+  }
+  .textarea {
+    margin-bottom: 40px;
+  }
+
+  .PaymentCard-body {
+    h3,
+    h5,
+    h6 {
+      font-family: "Plus Jakarta Sans";
+      font-style: normal;
+      color: #121212;
+    }
+    h6 {
+      font-weight: 500;
+      font-size: 0.93rem;
+      line-height: 19px;
+      opacity: 0.8;
+      margin-bottom: 8px;
+    }
+    h3 {
+      font-weight: 800;
+      font-size: 1rem;
+      line-height: 20px;
+      letter-spacing: -0.01em;
+      margin-right: 5px;
+    }
+
+    p {
+      color: #121212 !important;
+      font-weight: 700 !important;
+      font-size: 1rem !important;
+      line-height: 20px !important;
+      margin-bottom: 30px;
+    }
+
+    .receipt-card-1 {
+      background: rgba(1, 149, 133, 0.06);
+      border-radius: 10px;
+      padding: 15px 25px;
+      cursor: pointer;
+
+      h5 {
+        font-weight: 600;
+        font-size: 0.875rem;
+        color: #019585;
+        margin: 0;
+      }
+    }
+    .receipt-card-2 {
+      border-radius: 10px;
+      padding: 15px 25px;
+      cursor: pointer;
+      h5 {
+        font-weight: 600;
+        font-size: 0.875rem;
+        line-height: 18px;
+        margin: 0;
+      }
+    }
+    .total-payment {
+      display: flex;
+      justify-content: space-between;
+      margin: 5rem 0 0 0;
+    }
+  }
+}
+
+.d-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.completed-text {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 160%;
+  text-align: center;
+  color: #000000;
+}
+.search-button {
+  padding: 15px;
+  height: auto;
+  background: #019585;
+  box-shadow: 0px 0px 0px rgba(1, 149, 133, 0.15);
+  border-radius: 10px;
+  border: none;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+::placeholder {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 151.5%;
+  color: #121212;
+  opacity: 0.4;
+}
+
+@media only screen and (max-width: 500px) {
+  #w-sm-100 {
+    width: 100% !important;
+    margin-bottom: 16px;
+  }
+  .coaching-service-card {
+    padding: 1.2rem !important;
+  }
+  #service-card-sm {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .view-btn-margin {
+    margin-top: 35px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .receipt-card-1,
+  .receipt-card-2 {
+    padding: 10px 15px !important;
+  }
+}

@@ -1,0 +1,232 @@
+<div class="parent-Container">
+  <div
+    class="d-flex justify-content-center align-items-center sub-parent-container-1"
+  >
+    <div
+      class="d-flex col-xl-11 col-12 flex-xl-row flex-column justify-content-xl-between align-items-center sub-parent-container-2"
+    >
+      <div
+        class="d-flex flex-column align-items-start col-xl-6 col-lg-8 col-md-9 col-sm-10 col-10 container-1"
+      >
+        <div class="col-md-11 col-sm-12 col-10 container-1-text">
+          <p class="text-1">
+            Build Your <span class="remote-text">remote</span> &nbsp;
+            <span class="remote-text">career</span> from indonesia
+          </p>
+          <span class="text-2 d-flex col-11">
+            There are thousands of remote jobs for you to explore, find your
+            &nbsp; job now!</span
+          >
+        </div>
+
+        <div class="d-flex col-12">
+          <form
+            [formGroup]="SearchjobForm"
+            class="d-flex flex-column justify-content-between col-12 div-width"
+          >
+            <div
+              class="d-flex flex-sm-row flex-column justify-content-between align-items-center mt-5 col-12"
+            >
+              <div class="form-group customer-width col-sm-4 col-12">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  formControlName="title"
+                  placeholder="Search"
+                />
+                <img
+                  src="assets/images/search-normal.png"
+                  alt="Image Description"
+                  class="input-image"
+                />
+              </div>
+
+              <div class="select-1-width col-sm-4 col-12">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  id="jobCategory"
+                  formControlName="jobCategory"
+                >
+                  <option selected hidden value="">Category</option>
+
+                  <option
+                    *ngFor="let category of JobCategory"
+                    [ngValue]="category.title"
+                  >
+                    {{ category.title }}
+                  </option>
+                </select>
+                <img
+                  src="assets/images/task-square.png"
+                  alt="Image Description"
+                  class="select-image"
+                />
+              </div>
+
+              <div class="select-width col-sm-3 col-12">
+                <select
+                  class="form-select type-select"
+                  aria-label="Default select example"
+                  id="jobType"
+                  formControlName="jobType"
+                >
+                  <option selected hidden value="">Type</option>
+
+                  <option *ngFor="let i of JobType" [value]="i">
+                    {{ i }}
+                  </option>
+                </select>
+                <img
+                  src="assets/images/calendar-2.png"
+                  alt="Image Description"
+                  class="select-image"
+                />
+              </div>
+            </div>
+            <button
+              type="button"
+              class="search-button col-12"
+              (click)="onSearchclick()"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div
+        class="d-flex col-xl-6 col-lg-10 col-md-10 col-sm-10 col-11 mt-5 mt-xl-0 container-2 flex-column align-items-center"
+      >
+        <div class="parent-div col-9">
+          <div class="child-div col-11">
+            <div class="Zindex-image-1">
+              <img
+                src="assets/images/Frame 39474.png"
+                alt="img"
+                class="img-2"
+              />
+            </div>
+            <mat-card class="card d-flex flex-column col-11">
+              <div class="mx-3 mt-3">
+                <div class="d-flex flex-row justify-content-between">
+                  <div class="d-flex flex-row img-div justify-content-between">
+                    <div
+                      class="d-flex justify-content-center align-items-center"
+                    >
+                      <img
+                        src="assets/images/image 9.png"
+                        alt="img"
+                        class="card-logo"
+                      />
+                    </div>
+
+                    <div
+                      class="d-flex flex-column justify-content-around frontend-div"
+                    >
+                      <span class="text-3">Frontend Developer</span>
+                      <span class="text-4">dashClicks</span>
+                    </div>
+                  </div>
+                  <div
+                    class="d-flex flex-sm-row flex-column apply-div align-items-center justify-content-around"
+                  >
+                    <span class="text-5">Apply</span>
+                    <img src="assets/images/arrow-right.png" alt="arrow" />
+                  </div>
+                </div>
+                <div class="card-div2 col-11 mt-3"></div>
+                <div class="card-div3 col-6 mt-2"></div>
+              </div>
+
+              <div class="card-div4 col-12 mt-sm-4 mt-3"></div>
+
+              <div
+                class="d-flex flex-sm-row flex-column col-10 justify-content-between mt-sm-3 mt-1 mx-3"
+              >
+                <div
+                  class="card-bottom-div1 d-flex flex-row align-items-center justify-content-between"
+                >
+                  <img src="assets/images/location.png" alt="location" />
+                  <div class="card-bottom-div1-rectangle"></div>
+                </div>
+                <div
+                  class="card-bottom-div2 d-flex flex-row align-items-center justify-content-between"
+                >
+                  <img src="assets/images/dollar-circle.png" alt="location" />
+                  <div class="card-bottom-div2-rectangle"></div>
+                </div>
+                <div
+                  class="card-bottom-div3 d-flex flex-row align-items-center justify-content-between"
+                >
+                  <div class="card-bottom-div3-dot ms-sm-0 ms-1"></div>
+
+                  <div class="card-bottom-div3-rectangle d-flex flex-row"></div>
+                </div>
+              </div>
+            </mat-card>
+            <div class="z-index-image-2">
+              <img
+                src="assets/images/Frame 39475.png"
+                alt="img"
+                class="img-2"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2nd Conatiner  -->
+
+  <div class="text-6 mb-5 mt-5">Newest remote Jobs for you</div>
+  <div class="d-flex flex-column main-container-2">
+    <div class="d-flex flex-column col-12">
+      <app-newest-jobs></app-newest-jobs>
+    </div>
+  </div>
+
+  <div></div>
+  <!-- 3rd Conatiner  -->
+  <div class="d-flex flex-column align-items-center client-conatiner col-12">
+    <div
+      class="text-12 mb-5 customer-text col-xxl-10 col-xl-9 col-lg-10 col-md-11 col-11 ps-xxl-4 ps-xl-2"
+    >
+      <span>What our customers are saying</span>
+    </div>
+
+    <div
+      class="client-card-container col-xxl-8 col-xl-9 col-lg-10 col-md-11 col-12 d-flex flex-md-row flex-column justify-content-md-around"
+    >
+      <div
+        class="slider d-flex align-items-center"
+        *ngIf="showSlider"
+        (click)="sliderClick()"
+      >
+        <img src="assets/images/Group 37367.png" alt="" class="slider-img" />
+      </div>
+
+      <mat-card
+        class="client-card col-xxl-7 col-lg-6 col-md-6 col-sm-10 col-11 mx-3 mt-md-0 mt-3"
+        *ngFor="let card of testimonialsList"
+      >
+        <span class="text-13">“{{ card.title }}”</span>
+        <p class="text-14 mt-3">{{ card.description }}</p>
+        <div class="d-flex flex-row mt-4">
+          <div class="testimonial-img">
+            <img [src]="baseURL + card?.file?.path" alt="dp" />
+          </div>
+          <div
+            class="d-flex flex-column justify-content-between client-dp ms-2"
+          >
+            <span class="text-15">{{ card.fullName }}</span>
+            <span class="text-16">{{ card.designation }}</span>
+          </div>
+        </div>
+      </mat-card>
+      <h2 *ngIf="!testimonialsList?.length">No result found</h2>
+    </div>
+  </div>
+</div>

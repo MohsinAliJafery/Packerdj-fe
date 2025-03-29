@@ -1,0 +1,21 @@
+.backGround {
+  background-color: #019585;
+  color: white;
+  font-size: 17px;
+  height: 50px;
+  align-items: center;
+  vertical-align: middle;
+}
+.detail_button {
+  box-shadow: none;
+  border: none;
+  font-family: "Plus Jakarta Sans";
+  font-weight: 600;
+  height: 54px;
+  background: #019585;
+  border-radius: 10px;
+  color: white;
+}
+:disabled {
+  background: #a8b3b2;
+}

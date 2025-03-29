@@ -1,0 +1,179 @@
+<div class="coaching-detail-container my-5">
+  <div class="d-flex align-items-center dp-container">
+    <div class="profile-pic ms-2 ms-md-4 ms-xl-5">
+      <img src="assets/images/Frame candidate.png" alt="candidate-img" class="h-100 w-100" />
+    </div>
+    <div class="row g-0 w-100 ps-4 intro-container">
+      <div class="col-12 col-md-8 col-xl-8 col-lg-6">
+        <h1>Diana Laurence</h1>
+        <h2>Product Designer<span> at </span>Duxo Works</h2>
+        <button class="opentoRole">Open to roles</button>
+      </div>
+      <div class="button-padding col-xl-4 col-lg-6 col-md-4 d-flex justify-content-end align-items-center" 
+      (click)="openModel(inviteNow)">
+        <button class="invite-btn"> <img src="assets/images/invite-brifecase-tick.png" alt="icon" class="icon"/> Invite Now</button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #inviteNow>
+    <div class="modalForm">
+        <div class="modal-body">
+            <div class="row d-flex flex-column align-items-center">
+                <div
+                    class="col-11 mt-2 d-flex flex-row justify-content-between align-items-center">
+                    <span class="invite-candidate">Invite Diana Laurence for job</span>
+                    <div>
+                        <img src="assets/images/close-circle.png" alt="icon"
+                            (click)="dismissAll()" />
+                    </div>
+                </div>
+
+                <div class=" invite-candidate-popup col-11 text-9 mt-4 mb-4">
+                    <span>Get talent you need by inviting only people you want.</span>
+                </div>
+
+                <form class="col-11">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1" class="text-area-label mb-2">Message (optional)</label>
+                        <textarea class="form-control text-area"
+                            id="exampleFormControlTextarea1" rows="3"
+                            placeholder="Ex: Hi, My company open a job that maybe you interest...."></textarea>
+                    </div>
+                </form>
+
+                <div class="col-11 d-flex justify-content-end mt-5 mb-2">
+                    <div class="col-5">
+                        <button type="button" class="btn-send w-100"> Send </button>
+                    </div>
+                    
+                </div>
+
+
+
+
+                <div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+  <div class="row g-0 mt-5 ms-2 ms-md-3 ms-xl-4">
+    <div class="col-12 col-lg-7 col-xl-6 gx-3 gx-md-5 mb-5 mb-lg-0">
+      <div class="Overview-container">
+        <div class="d-flex align-items-center">
+          <img src="assets/images/overview.png" alt="Overview-icon" />
+          <h1>Overview</h1>
+        </div>
+        <div class="mt-4">
+          <p>
+            I'm Martin Baremore, an independent product designer at a company
+            called, Facebook Inc. I’m a community builder in my hometown of
+            Charlotte, NC, and in a few corners of the web. I want to work with
+            good people to build a better tomorrow.
+          </p>
+          <p>
+            I’m currently working as a Product Designer, but have a deep passion
+            for illustration.
+          </p>
+        </div>
+        <div class="row">
+
+          <div class="col-lg-3 col-sm-3 col-6 ps-sm-0 ps-5" id="w-sm-100">
+            <h2>Social Links</h2>
+            <div class="d-flex">
+              <img src="assets/images/Frame 39592.png" alt="linkedIn-icon" />
+              <img src="assets/images/Frame 39593.png" alt="world-icon" class="ms-2"/>
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-sm-4 col-6  ps-xl-4 ps-lg-3 ps-sm-0 ps-5" id="w-sm-100">
+            <h2 >Expertise</h2>
+            <div class="d-flex">
+              <span class="Expertise-1"> Technical</span>
+              <span class="Expertise-2 ms-2">Career</span>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-3 col-sm-4 col-6 ps-sm-0 ps-5 " id="w-sm-100">
+            <h2>Fluent in</h2>
+            <div class="d-flex">
+              <span class="Languages">English</span>
+              <span class="Languages ms-2">Indonesia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="Experience-container">
+        <div class="d-flex align-items-center">
+          <img src="assets/images/experience.png" alt="Experience-icon" />
+          <h1>Experience</h1>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <h3>Sr Product Designer</h3>
+            <h4>Facebook Inc</h4>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="date-duration">
+              <h5>FEB 2021 - PRESENT</h5>
+            </div>
+          </div>
+          <div class="col-12">
+            <h4 class="my-4">
+              Worked with the corporate Communication Team to design and deliver
+              a gamut of visual solutions ranging from national conference
+              branding and execution to social media campaigns.
+            </h4>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <h3>Sr Designer</h3>
+            <h4>Premier Inc</h4>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="date-duration">
+              <h5>JAN 2016 - DEC 2021</h5>
+            </div>
+          </div>
+          <div class="col-12">
+            <h4 class="my-4">
+              Worked with the corporate Communication Team to design and deliver
+              a gamut of visual solutions ranging from national conference
+              branding and execution to social media campaigns.
+            </h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="Education-container">
+        <div class="d-flex align-items-center">
+          <img src="assets/images/education.png" alt="Education-icon" />
+          <h1>Education</h1>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <h3>Bachelor / Visual Communication Design</h3>
+            <h4 class="d-flex align-items-center">
+              Institut Teknologi Nasional
+              <div></div>
+              2002 - 2007
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+   

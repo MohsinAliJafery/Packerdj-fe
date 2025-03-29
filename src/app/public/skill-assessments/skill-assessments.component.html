@@ -1,0 +1,170 @@
+<div class="skill-asseessment-container">
+  <div class="container-fluid">
+    <div
+      class="row parent-container d-flex justify-content-lg-start align-items-lg-start justify-content-center align-items-center"
+    >
+      <div class="col-lg-6 col-sm-10 ps-lg-5 ps-4 mt-5 ju">
+        <p class="text-1">
+          Evaluating Your <span class="text-2">Skills</span> for &nbsp;
+          <span class="text-2">Career</span> Advancement
+        </p>
+
+        <span class="text-3 mt-5 d-flex col-lg-9 col-11">
+          Let’s test your skills with us before applying to any remote jobs, so
+          you know where you are in terms of the skills and how ready they are
+          for a certain remote job that they’ve been eyeing for.
+        </span>
+
+        <button type="button" class="start-button mt-3" (click)="gotoTest()">
+          Start Test
+        </button>
+      </div>
+      <div
+        class="col-12 col-lg-6 mt-5 pb-5 ps-lg-4 ps-0 d-flex justify-content-lg-start justify-content-center"
+      >
+        <div class="skill-image mt-5 p-sm-0 p-2">
+          <div class="promo-image-1">
+            <img
+              src="assets/images/skill-promo-2.png"
+              alt="icon"
+              class="img-1"
+            />
+          </div>
+          <img src="assets/images/skill-image.png" alt="icon" class="image" />
+          <div class="promo-image-2">
+            <img
+              src="assets/images/skill-promo-1.png"
+              alt="icon"
+              class="img-2"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid choose-skill-container" id="Skills">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div
+        class="col-md-10 col-sm-11 d-flex flex-column justify-content-center align-items-center"
+      >
+        <span
+          class="text-4 d-flex col-xxl-7 col-xl-8 col-12 justify-content-center mt-5"
+        >
+          Choose your skill assessment
+        </span>
+        <span class="text-5 col-12 mt-4"
+          >Check your skill desired skill assessment</span
+        >
+
+        <div
+          class="col-xxl-6 col-xl-7 col-lg-8 col-md-10 col-12 mt-4"
+          [formGroup]="myGroup"
+        >
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="searchValue"
+            formControlName="searchValue"
+          >
+            <option selected hidden value="">Skill Type</option>
+            <option *ngFor="let type of SkillType" [value]="type">
+              {{ type }}
+            </option>
+          </select>
+
+          <div
+            *ngIf="
+              myGroup.controls['searchValue'].invalid &&
+              myGroup.controls['searchValue'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Skill type is required
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="search-button mt-4 mb-5 col-xxl-6 col-xl-7 col-lg-8 col-md-10 col-12"
+          (click)="onClick()"
+        >
+          Search Test
+        </button>
+      </div>
+
+      <div class="col-lg-8 col-12 p-3 mt-5" *ngIf="showLessSkills?.length">
+        <div
+          class="d-flex align-items-start col-12 mb-3 search-cards p-4"
+          *ngFor="let card of showLessSkills; let i = index"
+          (click)="onCardclick(card, card.isCardclick, i)"
+          [ngClass]="{ cardClicked: card.isCardclick === true }"
+        >
+          <div class="col-1 d-flex justify-content-center align-items-center">
+            <img
+              src="assets/images/image 1.png"
+              alt="icon"
+              class="skill-search-image"
+            />
+          </div>
+          <div class="col-11">
+            <span
+              class="text-6 d-flex col-sm-12 col-8 ps-xl-2 ps-md-4 ps-0 mx-md-0 mx-sm-4 mx-5"
+              >{{ card.title }}</span
+            >
+            <span
+              class="text-7 d-flex col-sm-12 col-8 ps-xl-2 ps-md-4 ps-0 mx-md-0 mx-sm-2 mx-5"
+              [innerHTML]="card.description"
+            ></span>
+            <span
+              class="text-8 d-flex col-12 ps-xl-2 ps-md-4 ps-0 mx-md-0 mx-sm-2 mx-5"
+            >
+              {{ i + 1 }} people like this
+            </span>
+          </div>
+        </div>
+        <div
+          class="d-flex justify-content-center"
+          *ngIf="showLessSkills?.length"
+        >
+          <button
+            *ngIf="!hideAllBtn"
+            type="button"
+            class="asset-button mt-4 mb-5"
+            (click)="showAll()"
+          >
+            Show more assessments
+          </button>
+        </div>
+
+        <nav aria-label="Page navigation" *ngIf="showLessSkills?.length">
+          <ul class="pagination">
+            <li class="page-item" [class.disabled]="currentPage === 1">
+              <a class="page-link" (click)="changePage(currentPage - 1)"
+                >Previous</a
+              >
+            </li>
+
+            <li
+              class="page-item"
+              *ngFor="let page of pageNumbers"
+              [class.active]="currentPage === page"
+            >
+              <a class="page-link" (click)="changePage(page)">{{ page }}</a>
+            </li>
+
+            <li class="page-item" [class.disabled]="currentPage === totalPages">
+              <a class="page-link" (click)="changePage(currentPage + 1)"
+                >Next</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div *ngIf="!showLessSkills.length" class="d-flex justify-content-center">
+        <h2>No result found</h2>
+      </div>
+    </div>
+  </div>
+</div>

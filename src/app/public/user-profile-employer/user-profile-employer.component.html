@@ -1,0 +1,369 @@
+<div class="update-profile-container">
+  <div class="container-fluid jobs-card-container">
+    <div
+      class="col-xl-9 col-md-10 col-sm-12 col-12 d-flex flex-xl-row flex-column align-items-xl-end align-items-center mx-md-5 mx-0 mt-5 mb-5"
+    >
+      <div
+        class="col-12 d-flex flex-xl-row flex-column justify-content-xl-between align-items-xl-start align-items-center mt-5"
+      >
+        <div class="col-xl-4 col-lg-6 col-sm-8 col-11 pe-xl-3 pe-0">
+          <mat-card class="card-Height" (click)="redirectToJobs()">
+            <div class="d-flex align-items-center">
+              <img src="assets/images/note-favorite.png" alt="icon" />
+              <span class="text-1 mx-3">Posted Jobs</span>
+            </div>
+            <div class="mt-4 d-flex justify-content-between align-items-center">
+              <span class="text-2">12</span>
+              <span class="viewDetail">View detail</span>
+            </div>
+          </mat-card>
+        </div>
+        <div
+          class="col-xl-4 col-lg-6 col-sm-8 col-11 ps-xl-3 ps-0 pe-xl-4 pe-0 mt-4 mt-xl-0"
+        >
+          <mat-card class="card-Height" (click)="redirectToresume()">
+            <div class="d-flex align-items-center">
+              <img src="assets/images/star.png" alt="icon" />
+              <span class="text-1 mx-3">Applied Resumes</span>
+            </div>
+            <div class="mt-4 d-flex justify-content-between align-items-center">
+              <span class="text-2">58</span>
+              <span class="viewDetail">View detail</span>
+            </div>
+          </mat-card>
+          <ng-template #updateProfile>
+            <div class="modalForm update-profile">
+              <div class="modal-body update">
+                <div class="d-flex flex-column align-items-center">
+                  <div
+                    class="mt-2 d-flex flex-row justify-content-between align-items-center col-11"
+                  >
+                    <span class="text-11">Update your profile details</span>
+                    <div>
+                      <img
+                        src="assets/images/close-circle.png"
+                        alt="icon"
+                        (click)="dismissAll()"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="basic-detail mt-4 col-11">
+                    <span class="text-13">Basic details</span>
+                  </div>
+
+                  <div class="mt-4 col-11">
+                    <span class="text-14">Upload profile photo</span>
+                  </div>
+
+                  <div class="d-flex flex-row mt-3 col-11">
+                    <div class="image-parent">
+                      <div>
+                        <img
+                          src="assets/images/Ellipse 437 (1) employer.png"
+                          alt="Dp"
+                        />
+                      </div>
+                      <div class="dl8-icon">
+                        <img src="assets/images/dl8.png" alt="icon" />
+                      </div>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center mx-3">
+                      <span class="text-15 mt-2">Update file</span>
+                      <span class="text-16"
+                        >Make sure the file is below 2mb</span
+                      >
+                    </div>
+                  </div>
+
+                  <form class="col-11 mt-5">
+                    <div class="form-group col-12">
+                      <span class="text-17">
+                        Your company <span class="star">*</span>
+                      </span>
+                      <input
+                        type="text"
+                        class="form-control mt-2"
+                        id="exampleInputEmail1"
+                        placeholder="Duxo Works, Inc"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+
+                    <div class="col-12 mt-4">
+                      <span class="text-17"
+                        >Industry <span class="star">*</span>
+                      </span>
+                      <select
+                        class="form-select mt-2"
+                        aria-label="Default select example"
+                      >
+                        <option value="Male">Softwear Development</option>
+                        <option value="Female">Engineering</option>
+                        <option value="other">Commerce</option>
+                      </select>
+                    </div>
+
+                    <div class="col-12 mt-4">
+                      <span class="text-17"
+                        >Company size <span class="star">*</span>
+                      </span>
+                      <select
+                        class="form-select mt-2"
+                        aria-label="Default select example"
+                      >
+                        <option value="Male">2- 10 employees</option>
+                        <option value="Female">2- 50 employees</option>
+                        <option value="other">2- 100 employees</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group mt-4">
+                      <label for="exampleFormControlTextarea1" class="text-17"
+                        >About your company<span class="star">*</span>
+                      </label>
+                      <textarea
+                        class="form-control text-area mt-2"
+                        id="exampleFormControlTextarea1"
+                        rows="5"
+                        placeholder="Duxo Works designed to help growing companies accelerate product development through the power of great teams."
+                      ></textarea>
+                    </div>
+
+                    <div class="basic-detail mt-4 col-12">
+                      <span class="text-13">Social links</span>
+                    </div>
+
+                    <div class="form-group mt-4 col-12">
+                      <span class="text-17">
+                        Website URL <span class="star">*</span>
+                      </span>
+                      <input
+                        type="text"
+                        class="form-control mt-2"
+                        id="exampleInputEmail1"
+                        placeholder="www.duxoworks.com"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+
+                    <div
+                      class="form-group mt-4 mb-4 col-12"
+                      style="height: 45px"
+                    >
+                      <button class="btn-add w-100 h-100">
+                        <img src="assets/images/add.png" alt="icon" /> Add
+                        another
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+
+        <div
+          class="col-xl-4 col-lg-6 col-sm-8 col-11 ps-xl-2 ps-0 mt-4 mt-xl-0"
+        >
+          <mat-card class="card-Height">
+            <div class="d-flex align-items-center">
+              <img src="assets/images/star.2.png" alt="icon" />
+              <span class="text-1 mx-3">Candidate Database</span>
+            </div>
+            <div class="mt-4 d-flex justify-content-between align-items-center">
+              <span class="text-2">1,580</span>
+              <span class="viewDetail">View detail</span>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+      <div
+        class="col-xl-2 col-md-3 col-sm-4 col-5 mx-xl-4 mx-0 mt-xl-0 mt-3 addjobButton d-flex flex-column justify-content-center align-items-center"
+        (click)="onClick()"
+      >
+        <div class="col-12 d-flex justify-content-center mt-2">
+          <img
+            src="assets/images/Vector-add.png"
+            alt="icon"
+            class="add-job-image"
+          />
+        </div>
+        <div class="col-12 d-flex justify-content-center mt-4">
+          <span class="addJob">Add New Jobs </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 chart-container gx-0 mt-3">
+    <div
+      class="d-flex flex-column mx-md-5 mx-sm-4 mx-2 p-2 col-xl-9 col-md-10 col-sm-11 col-12"
+    >
+      <span class="text-4">Applied jobs by types</span>
+      <mat-card class="mt-4 jobTypeCard">
+        <div id="chart">
+          <canvas id="JobChart2"></canvas>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
+  <div
+    class="d-flex flex-column col-xl-9 col-md-10 col-sm-11 col-12 mx-md-5 mx-sm-4 mx-2 p-2 appliedJob-container mt-5"
+  >
+    <span class="text-4">Posted Jobs</span>
+    <mat-card
+      class="d-flex flex-column matcard col-12 cardpro mb-4 mt-3"
+      *ngFor="let item of postedJob"
+      id="section-1"
+    >
+      <div
+        class="d-flex flex-lg-row flex-column justify-content-lg-between align-items-start col-12"
+      >
+        <div
+          class="d-flex flex-sm-row flex-column col-xxl-6 col-xl-7 col-lg-8 col-sm-11 col-12 align-items-sm-center align-items-start card-div mx-md-4 mx-sm-3 mx-0"
+        >
+          <div
+            class="d-flex row gx-0 justify-content-center align-items-center"
+          >
+            <img
+              [src]="item.icon"
+              alt="logo"
+              style="
+                height: auto;
+                width: 60px;
+                object-fit: contain;
+                border-radius: 10px;
+              "
+            />
+          </div>
+
+          <div
+            class="d-flex flex-column col-xxl-10 col-xl-10 card-1-text-height justify-content-between"
+          >
+            <span class="text-5 mx-xl-4 mx-sm-4 mx-3 mt-sm-0 mt-2">{{
+              item.title
+            }}</span>
+            <div
+              class="d-flex flex-row justify-content-start align-items-center col-12"
+            >
+              <span class="text-6 mx-xl-4 mx-sm-4 mx-3 mt-2">{{
+                item.type
+              }}</span>
+              <div class="row">
+                <div
+                  class="col-6 d-flex flex-row align-items-center justify-content-start design-job gx-0"
+                >
+                  <div class="dot mt-2"></div>
+                  <button type="button" class="card-button-1 ms-2 mt-2">
+                    {{ item.btn1 }}
+                  </button>
+                </div>
+
+                <div
+                  class="col-6 d-flex flex-row align-items-center design-job gx-0"
+                >
+                  <div class="dot mt-2 ms-md-2 ms-0"></div>
+                  <button type="button" class="card-button-2 ms-2 mt-2">
+                    {{ item.btn2 }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="d-flex flex-column align-items-end mx-3 col-xl-4 col-lg-3 col-11 mt-sm-0 mt-2 card-div"
+        >
+          <span class="text-7"> {{ item.currency }}</span>
+          <span class="text-8">{{ item.month }}</span>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column mt-5 col-12">
+        <ul>
+          <li>
+            <span class="text-10">{{ item.Description1 }}</span>
+          </li>
+          <li>
+            <span class="text-10">{{ item.Description2 }}</span>
+          </li>
+        </ul>
+      </div>
+    </mat-card>
+  </div>
+
+  <div
+    class="d-flex flex-column col-xl-9 col-md-10 col-sm-11 col-12 mx-md-5 mx-sm-4 mx-2 p-2 mt-5 appliedJob-container mb-10"
+  >
+    <span class="text-4">Recent application</span>
+    <mat-card
+      class="d-flex flex-column matcard col-12 py-5 mt-4"
+      *ngFor="let item of applications"
+      id="section-2"
+    >
+      <div
+        class="d-flex flex-md-row flex-column justify-content-lg-between align-items-start col-12"
+      >
+        <div
+          class="d-flex flex-sm-row flex-column col-xxl-6 col-md-6 col-sm-8 col-12 align-items-sm-center align-items-start card-div mx-md-4 mx-sm-3 mx-0"
+        >
+          <div
+            class="d-flex row gx-0 justify-content-center align-items-center"
+          >
+            <img
+              [src]="item.icon"
+              alt="logo"
+              style="
+                height: auto;
+                width: 60px;
+                object-fit: contain;
+                border-radius: 10px;
+              "
+            />
+          </div>
+
+          <div
+            class="d-flex flex-column col-xxl-9 col-xl-10 card-1-text-height justify-content-between"
+          >
+            <span class="text-5 mx-xl-4 mx-sm-4 mx-3 mt-sm-0 mt-2">{{
+              item.title
+            }}</span>
+            <div
+              class="d-flex flex-row justify-content-start align-items-center col-12"
+            >
+              <span class="text-6 mx-xl-4 mx-sm-4 mx-3 mt-2">{{
+                item.type
+              }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="d-flex flex-column align-items-end col-xl-4 col-lg-4 col-md-5 col-11 mt-sm-0 mt-2 card-div"
+        >
+          <div class="d-flex flex-row">
+            <img [src]="item.logo" alt="icon" />
+            <span class="text-7 mx-1"> {{ item.Date }}</span>
+          </div>
+
+          <div class="d-flex flex-row align-items-center mt-2">
+            <span
+              [ngClass]="
+                item.status == 'Need review' ? 'job-button2' : ' job-button'
+              "
+              >{{ item.status }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </mat-card>
+    <div class="d-flex justify-content-center align-items-center">
+      <button type="button" class="viewAll-button col-1 mt-3 mb-3">
+        View All
+      </button>
+    </div>
+  </div>
+</div>

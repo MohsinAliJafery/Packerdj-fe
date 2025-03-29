@@ -1,0 +1,192 @@
+<div
+  class="main-Parent-container d-flex flex-column justify-content-between"
+  *ngIf="footerService.isFirstFooterShow"
+>
+  <div class="footer-container row container-fluid mt-5">
+    <div
+      class="d-flex flex-column justify-content-between coaching-footer-child col-lg-5 col-md-8 col-sm-9 col-12 ps-5"
+    >
+      <img src="assets/images/logo.png" alt="Logo" class="logo" />
+      <span class="text-1"
+        >Copyright © 2023 Pekerdja | All Rights Reserved
+      </span>
+      <div class="social-media d-flex justify-content-between">
+        <a
+          [href]="
+            Facebook_Link?.content
+              ? Facebook_Link?.content
+              : 'javascript:void(0)'
+          "
+          target="_blank"
+        >
+          <img src="assets/images/Vector.png" alt="fb Logo" />
+        </a>
+        <a
+          [href]="
+            Instagram_Link?.content
+              ? Instagram_Link?.content
+              : 'javascript:void(0)'
+          "
+          target="_blank"
+        >
+          <img src="assets/images/Instagram.png" alt="insta Logo" />
+        </a>
+        <a
+          [href]="
+            Linkedin_Link?.content
+              ? Linkedin_Link?.content
+              : 'javascript:void(0)'
+          "
+          target="_blank"
+        >
+          <img src="assets/images/LinkedIn.png" alt="linkedin Logo" />
+        </a>
+      </div>
+    </div>
+    <div
+      class="col-lg-2 col-md-2 col-sm-3 col-12 d-flex flex-sm-column flex-row justify-content-between align-items-sm-start align-items-center coaching-footer-menu mt-sm-0 mt-2"
+    >
+      <span class="text-2">Menu</span>
+      <a (click)="onClick(1)">About us</a>
+      <a (click)="onClick(2)">Contact us</a>
+      <a (click)="onClick(3)">Privacy Policy</a>
+      <a (click)="onClick(4)">Terms of Use</a>
+    </div>
+
+    <div
+      class="col-lg-5 col-md-8 col-sm-10 col-12 d-flex flex-column coaching-footer-child-3 mt-sm-0 mt-2 ps-5"
+    >
+      <span class="text-3">Subscribe to our newsletter</span>
+      <span class="text-4 mt-4 mb-4"
+        >Lorem ipsum dolor sit amet consectetur dipiscing elit aliquam mauris
+        sed ma</span
+      >
+
+      <form class="coaching-form col-12 row g-0 mt-4">
+        <div class="form-group col-xl-5 col-lg-7 col-sm-7 col-12">
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Enter your Email"
+          />
+        </div>
+
+        <div class="col-xl-3 col-lg-4 col-sm-4 col-5 mx-xl-3 mx-lg-2 mx-sm-3">
+          <button
+            type="button"
+            class="subscribe-button w-100 h-100"
+            routerLink=""
+          >
+            Subscribe
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div
+    class="coaching-footer-bottom col-sm-12 col-10 d-flex justify-content-end"
+  >
+    <div
+      class="footer-bottom-child d-flex justify-content-between mx-5 cursor-pointer"
+      (click)="backToTop()"
+    >
+      <span class="text-5">Back to Top </span>
+      <img src="assets/images/arrow-up.png" alt="arrow" />
+    </div>
+  </div>
+</div>
+
+<!-- 2nd footer  -->
+<div
+  class="main-Parent-container d-flex flex-column justify-content-between"
+  *ngIf="footerService.issecondFooterShow"
+>
+  <div
+    class="footer-container row container-fluid d-flex flex-md-row flex-column justify-content-xxl-around justify-content-md-start justify-content-between align-items-md-start align-items-center mt-5"
+  >
+    <div
+      class="d-flex flex-column justify-content-between footer-child col-lg-6 col-md-7 col-sm-9 col-11 mx-xxl-0 mx-lg-5 mx-md-4"
+    >
+      <img src="assets/images/logo.png" alt="Logo" class="logo" />
+      <span class="text-1"
+        >Copyright © 2023 Pekerdja | All Rights Reserved
+      </span>
+
+      <div class="social-media d-flex justify-content-between">
+        <a
+          [href]="
+            Facebook_Link?.content
+              ? Facebook_Link?.content
+              : 'javascript:void(0)'
+          "
+          target="_blank"
+        >
+          <img src="assets/images/Vector.png" alt="fb Logo" />
+        </a>
+        <a
+          [href]="
+            Instagram_Link?.content
+              ? Instagram_Link?.content
+              : 'javascript:void(0)'
+          "
+          target="_blank"
+        >
+          <img src="assets/images/Instagram.png" alt="insta Logo" />
+        </a>
+        <a
+          [href]="
+            Linkedin_Link?.content
+              ? Linkedin_Link?.content
+              : 'javascript:void(0)'
+          "
+          target="_blank"
+        >
+          <img src="assets/images/LinkedIn.png" alt="linkedin Logo" />
+        </a>
+      </div>
+
+      <!-- <div class="social-media d-flex justify-content-between">
+        <a
+          href="https://www.facebook.com/profile.php?id=100089738155904 "
+          target="_blank"
+        >
+          <img src="assets/images/Vector.png" alt="fb Logo" />
+        </a>
+        <a href="https://www.instagram.com/pekerdja_id/ " target="_blank">
+          <img src="assets/images/Instagram.png" alt="insta Logo" />
+        </a>
+        <a href="https://www.linkedin.com/company/pekerdja/" target="_blank">
+          <img src="assets/images/LinkedIn.png" alt="linkedin Logo" />
+        </a>
+      </div> -->
+    </div>
+
+    <div
+      class="col-md-3 col-sm-9 col-11 d-flex flex-column align-items-start footer-menu mt-md-0 mt-sm-5 mt-5"
+    >
+      <span class="text-2">Menu</span>
+      <div class="d-flex flex-row mt-3">
+        <div class="d-flex flex-column col-7 justify-content-between menu-item">
+          <a (click)="onClick(1)">About Us</a>
+          <a (click)="onClick(2)">Contact Us</a>
+        </div>
+        <div class="d-flex flex-column col-7 justify-content-between menu-item">
+          <a (click)="onClick(3)">Privacy Policy</a>
+          <a (click)="onClick(4)">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom col-sm-12 col-10 d-flex justify-content-end">
+    <div
+      class="footer-bottom-child d-flex justify-content-between mx-5 cursor-pointer"
+      (click)="backToTop()"
+    >
+      <span class="text-5">Back to Top </span>
+      <img src="assets/images/arrow-up.png" alt="arrow" />
+    </div>
+  </div>
+</div>

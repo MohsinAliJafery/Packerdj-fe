@@ -1,0 +1,16 @@
+<div class="container-fluid termsOfUse-Container" id="termsOfUse">
+  <div class="row ps-lg-5 ps-4">
+    <div class="col-11 mt-5 privacy-class">
+      <p class="col-12 text-7">Pekerdja Terms of Use</p>
+      <p class="col-12 text-8 mb-4">
+        {{ termsOfUse?.updatedAt | date : "longDate" }}
+      </p>
+    </div>
+
+    <div class="col-11 my-3">
+      <div class="row">
+        <span class="text-10 mt-3" [innerHTML]="termsOfUse?.content"> </span>
+      </div>
+    </div>
+  </div>
+</div>

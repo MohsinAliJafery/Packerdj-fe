@@ -1,0 +1,62 @@
+<div class="d-flex flex-column align-items-center">
+  <div class="col-10 mt-5">
+    <div class="d-flex justify-content-end mb-2">
+      <button
+        class="edit-button"
+        (click)="onCreate()"
+        *ngIf="!faqList?.faqs?.length"
+      >
+        Add Faqs
+      </button>
+      <button
+        class="edit-button"
+        (click)="editFaqs(faqList?._id)"
+        *ngIf="faqList?.faqs?.length"
+      >
+        Edit Faqs
+      </button>
+    </div>
+
+    <div class="container-fluid">
+      <div
+        class="row d-flex justify-content-center"
+        style="padding-bottom: 10%"
+      >
+        <div class="col-lg-11 col-sm-10 col-12">
+          <div class="col-12 d-flex justify-content-center">
+            <span class="text-11">Frequently Asked Questions</span>
+          </div>
+
+          <mat-accordion class="panel" *ngFor="let panel of faqList?.faqs">
+            <mat-expansion-panel
+              (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false"
+            >
+              <mat-expansion-panel-header class="panel-header-height">
+                <mat-panel-title>
+                  <span class="text-12"> {{ panel.title }}</span>
+                </mat-panel-title>
+                <div class="custom-icon">
+                  <img
+                    class="add-icon"
+                    src="assets/images/add-circle.png"
+                    alt="Custom Icon"
+                  />
+                  <img
+                    class="minus-icon"
+                    src="assets/images/minus-cirlce.png"
+                    alt="Custom Icon"
+                  />
+                </div>
+              </mat-expansion-panel-header>
+              <p class="text-13">{{ panel.description }}</p>
+            </mat-expansion-panel>
+          </mat-accordion>
+          <div *ngIf="!faqList?.faqs?.length">
+            <p class="p-4 text-center">No result found</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

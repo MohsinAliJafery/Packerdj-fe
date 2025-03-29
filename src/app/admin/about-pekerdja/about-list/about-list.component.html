@@ -1,0 +1,28 @@
+<div class="d-flex flex-column align-items-center">
+  <div class="col-10 mt-5">
+    <table class="table">
+      <thead class="backGround">
+        <tr>
+          <th class="col">#</th>
+          <th class="col">Title</th>
+          <th class="col">Edit</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="aboutList?.length">
+        <tr *ngFor="let item of aboutList; let i = index">
+          <th>{{ i + 1 }}</th>
+
+          <td>{{ item.title }}</td>
+          <td>
+            <a class="p-2" (click)="editData(item._id)"
+              ><img src="assets/icons/edit.svg" alt="Edit"
+            /></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="!aboutList?.length">
+      <p class="p-4 text-center">No result found</p>
+    </div>
+  </div>
+</div>

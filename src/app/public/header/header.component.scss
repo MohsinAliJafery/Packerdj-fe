@@ -1,0 +1,566 @@
+.menu-items {
+  width: 275px;
+}
+
+.update-button {
+  width: 100%;
+  min-height: 50px;
+  background: #019585;
+  box-shadow: 0px 0px 0px rgba(1, 149, 133, 0.15);
+  border-radius: 10px;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  border: none;
+}
+
+.modalForm {
+  height: 220px;
+}
+
+.modalForm.update-profile {
+  height: 600px;
+  overflow-y: auto;
+}
+
+.form-control.text-area {
+  height: 140px;
+  background: #f2f2f2;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+}
+
+.text-11 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.01em;
+  color: #121212;
+}
+
+.text-12 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #121212;
+  opacity: 0.7;
+}
+
+.text-13 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: -0.01em;
+  color: #121212;
+  opacity: 0.8;
+}
+
+.text-14 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #121212;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.text-15 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: -0.01em;
+  color: #019585;
+}
+
+.text-16 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  letter-spacing: -0.01em;
+  color: #121212;
+  opacity: 0.6;
+}
+
+.text-17 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #121212;
+}
+
+.star {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #eb5757;
+}
+
+.form-control {
+  height: 50px;
+  box-shadow: none;
+  caret-color: black;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding-left: 23px;
+  border: 1px solid #e0e0e0 !important;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #121212;
+  opacity: 0.7;
+}
+
+.form-select {
+  padding-left: 25px;
+  height: 50px;
+  background-color: #f5f7f9;
+  border-radius: 10px;
+  box-shadow: none;
+  border: 1px solid #e0e0e0 !important;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #121212;
+  opacity: 0.7;
+}
+
+.basic-detail {
+  height: 35px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.image-parent {
+  position: relative;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid #dbd1d1;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.image-parent input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 0;
+}
+
+.dl8-icon {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+::placeholder {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: black;
+}
+
+.main-Parent-container {
+  height: 100px;
+  // border: 1px solid red;
+}
+
+.top-nav {
+  height: 100px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #ffffff;
+
+  .logo {
+    height: 40px;
+    width: 160px;
+    cursor: pointer;
+  }
+
+  .logo-container {
+    height: 100%;
+    // border: 1px solid red;
+    // width: 1400px;
+  }
+}
+
+.container-fluid {
+  --bs-gutter-x: 0 !important;
+}
+
+.social-div {
+  width: 130px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .profile {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    img {
+      border-radius: 100%;
+    }
+  }
+}
+
+.social-div-2 {
+  width: 130px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-menu {
+  margin-top: 25px !important;
+}
+
+.dropdown-toggle {
+  white-space: nowrap;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.custom-button {
+  // border: 1px solid red;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+}
+
+.custom-button:focus {
+  border: none;
+  outline: none;
+}
+
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0 !important;
+  vertical-align: 0 !important;
+  content: "";
+  border-top: 0 solid !important;
+  border-right: 0 !important;
+  border-bottom: 0;
+  border-left: 0 !important;
+  display: none;
+}
+
+:host ::ng-deep .custom-dropdown.show {
+  opacity: 1;
+  z-index: 1;
+  position: static;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  a {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    line-height: 23px;
+    color: #121212;
+    text-decoration: none;
+  }
+
+  .logo {
+    height: 35px !important;
+    width: 130px !important;
+  }
+
+  .signIn-button {
+    font-size: 15px !important;
+    padding: 0 16px !important;
+    width: 90px !important;
+    height: 35px !important;
+  }
+
+  .social-div {
+    width: 100px !important;
+  }
+
+  .Bell-icon-2 {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .Dp-2 {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .expand-arrow-2 {
+    width: 12px !important;
+    height: 8px !important;
+  }
+}
+
+.active {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  color: #019585;
+  border-bottom: 3px solid #019585;
+}
+
+@media only screen and (max-width: 768px) {
+  .dropdown-menu {
+    margin-top: 20px !important;
+  }
+
+  .logo-container {
+    display: none !important;
+    // border:1px solid red
+  }
+
+  .social-div-2 {
+    display: flex !important;
+  }
+
+  .mobile-nav-container {
+    display: block;
+  }
+
+  .logo2 {
+    height: 40px !important;
+    width: 140px !important;
+    margin-left: 4% !important;
+    // border:1px solid red
+  }
+
+  .signIn-button-2 {
+    background-color: #eff6f4;
+    border-radius: 10px;
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 600;
+    color: #019585;
+    border: none;
+    box-shadow: none;
+    display: block;
+    font-size: 14px !important;
+    padding: 0 16px !important;
+    width: 80px !important;
+    height: 35px !important;
+    margin-top: 5px !important;
+  }
+
+  .menu-container {
+    width: 150px !important;
+    height: 150px;
+    margin-top: 45px !important;
+  }
+
+  .social-div-2 {
+    width: 100px !important;
+    margin-top: 5px !important;
+  }
+
+  .expand-arrow {
+    width: 10px !important;
+    height: 7px !important;
+  }
+
+  .Bell-icon {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .Dp {
+    width: 35px !important;
+    height: 35px !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .social-div-2 {
+    display: none !important;
+  }
+
+  .logo-container {
+    display: flex !important;
+    // border:1px solid red
+  }
+
+  .signIn-button-2 {
+    display: none;
+  }
+
+  .logo2 {
+    display: none !important;
+  }
+
+  .mobile-nav-container {
+    display: none;
+  }
+
+  .menu-container {
+    display: none;
+  }
+}
+
+a {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  color: #121212;
+  text-decoration: none;
+  display: inline-block;
+  height: 50px;
+  cursor: pointer;
+  // border: 1px solid red;
+}
+
+.signIn-button {
+  background-color: #eff6f4;
+  border-radius: 10px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: #019585;
+  padding: 10px 16px;
+  width: 120px;
+  height: 45px;
+  border: none;
+  box-shadow: none;
+}
+
+.right-container {
+  display: flex;
+  position: fixed;
+  top: 100px;
+  // margin-top: 40px;
+  height: 100vh;
+  width: 275px;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  z-index: 1;
+  opacity: 1;
+  right: 0;
+  transition: opacity 0.3s linear;
+  // border: 1px solid red;
+}
+
+.right-container.hide {
+  display: none;
+  z-index: -1;
+}
+
+h1 {
+  font-family: Maecenas-UltraBoldItalic, serif;
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.display {
+  opacity: 1;
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  scroll-behavior: smooth;
+  //   margin: 50px;
+}
+
+.show {
+  opacity: 1;
+  z-index: 1;
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  scroll-behavior: smooth;
+}
+
+.hide {
+  display: none;
+  opacity: 0;
+  z-index: -1;
+  scroll-behavior: smooth;
+  border: 1px solid red;
+}
+
+.fortcel-mig-mere-container {
+  opacity: 1;
+  transition: opacity 0.5s linear;
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  a {
+    height: 45px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .logo2 {
+    margin-top: 47px !important;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .logo2 {
+    margin-top: 47px !important;
+    height: 40px !important;
+    width: 120px !important;
+    margin-left: 4% !important;
+    // border:1px solid red
+  }
+}

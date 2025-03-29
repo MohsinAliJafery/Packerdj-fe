@@ -1,0 +1,197 @@
+<div class="coaching-container mb-5">
+  <div class="row g-0 mt-5 ms-8">
+    <div class="col-12 col-lg-6 gx-5 d-flex justify-content-center mt-5">
+      <div class="column-1 d-center flex-column">
+        <h1 class="title">
+          <span>Learn</span> and grow with help from our
+          <span>expert</span> mentors
+        </h1>
+        <h2 class="description pe-5">
+          It’s about time you choose to connect with expert professionals and
+          get that easy-to-follow lessons that you will find necessary to
+          advance your career
+        </h2>
+
+        <div class="row mt-3">
+          <div
+            class="col-12 col-sm-6 col-xxl-5 gx-4 mb-4 d-flex justify-content-center justify-content-sm-start"
+            id="courses-column"
+            *ngFor="let item of Courses; let i = index"
+          >
+            <div
+              class="courses-card"
+              (click)="onCardclick(item.isCardclick, i)"
+              [ngClass]="{ selectedCard: item.isCardclick === true }"
+            >
+              <div class="courses-icon">
+                <img
+                  src="{{ item.icon }}"
+                  alt="courses-icon"
+                  class="h-100 w-100"
+                />
+              </div>
+              <h5>{{ item.title }}</h5>
+              <h6>{{ item.description }}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-6 gx-5 mt-5 d-flex justify-content-center">
+      <div class="img-card d-center">
+        <div class="promotion-card-1">
+          <img src="assets/images/promotion-1.png" alt="promotion-img" />
+        </div>
+        <img
+          src="assets/images/coaching-img-1.png"
+          alt="coaching-main-img"
+          class="rounded-3 w-90"
+        />
+        <div class="promotion-card-2">
+          <img src="assets/images/promotion-2.png" alt="promotion-img" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-0 coaching-section">
+    <div class="col-12 gx-5 d-center flex-column mb-5 mt-8">
+      <h1 class="coaches-title">Discover our top coaches</h1>
+      <p class="description">Let’s meet our top coaches</p>
+    </div>
+    <div class="d-flex flex-wrap justify-content-center">
+      <div
+        class="coaches-card mb-4 me-3"
+        *ngFor="let item of CoachesCards; let i = index"
+        (click)="CoachesDetail(item._id)"
+      >
+        <img
+          *ngIf="item?.file?.path"
+          [src]="baseURL + item.file.path"
+          alt="coaching-main-img"
+          class="rounded-3 h-100 w-100 cursor-pointer"
+        />
+        <div class="coaches-info-parent">
+          <div class="coaches-info">
+            <h4>{{ item.fullName }}</h4>
+            <h5>{{ item.designation }}</h5>
+            <span class="d-flex">
+              <img
+                src="assets/images/briefcase.png"
+                alt="role-icon"
+                class="role-icon"
+              />
+
+              <h6>{{ item.company }}</h6>
+            </span>
+          </div>
+        </div>
+      </div>
+      <h2 *ngIf="!CoachesCards?.length">No result found</h2>
+    </div>
+    <div
+      class="col-12 d-center mt-6 mb-5"
+      (click)="exploreCoaches()"
+      *ngIf="CoachesCards?.length"
+    >
+      <button type="button" class="search-button">Explore all</button>
+    </div>
+  </div>
+
+  <div class="row g-0 search-section">
+    <div class="col-12 gx-5 d-center flex-column mb-5 mt-8">
+      <h1 class="coaches-title">Search your desired coach</h1>
+    </div>
+
+    <div class="col-12 gx-5 d-center">
+      <form
+        [formGroup]="SearchCoachForm"
+        class="search-form d-flex flex-column col-12 col-md-10 col-lg-8 col-xl-6 col-xxl-6"
+      >
+        <!-- <div class="form-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            formControlName="title"
+            aria-describedby="emailHelp"
+            placeholder="Customer"
+          />
+          <img
+            src="assets/images/search-normal.png"
+            alt="search-icon"
+            class="input-image"
+          />
+        </div>
+        <div class="row mb-3">
+          <div class="col-6 col-sm-4">
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              id="coachCategory"
+              formControlName="coachCategory"
+            >
+              <option value="" hidden selected>Category</option>
+              <option value="One">One</option>
+              <option value="Two">Two</option>
+              <option value="Three">Three</option>
+            </select>
+            <img
+              src="assets/images/task-square.png"
+              alt="Image Description"
+              class="select-image"
+            />
+          </div>
+
+          <div class="col-6 col-sm-4">
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              id="coachType"
+              formControlName="coachType"
+            >
+              <option value="" hidden selected>Type</option>
+              <option value="One">One</option>
+              <option value="Two">Two</option>
+              <option value="Three">Three</option>
+            </select>
+            <img
+              src="assets/images/calendar-2.png"
+              alt="Image Description"
+              class="select-image"
+            />
+          </div>
+
+          <div class="col-6 col-sm-4">
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              id="budget"
+              formControlName="budget"
+            >
+              <option value="" hidden selected>Budget</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+            </select>
+            <img
+              src="assets/images/dollar-circle.png"
+              alt="Budget-icon"
+              class="select-image"
+            />
+          </div>
+        </div> -->
+        <div class="col-12 p-0">
+          <button
+            type="button"
+            class="search-button w-100"
+            (click)="exploreCoaches()"
+          >
+            Search
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

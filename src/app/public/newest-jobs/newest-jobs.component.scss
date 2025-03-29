@@ -1,0 +1,134 @@
+.text-7 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 132%;
+  color: #121212;
+}
+.text-8 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 132%;
+  color: #121212;
+  opacity: 0.6;
+}
+
+.text-9 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 132%;
+  color: #121212;
+}
+.text-10 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 132%;
+  color: #121212;
+  opacity: 0.5;
+}
+
+.text-11 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 178%;
+  letter-spacing: 0.01em;
+  color: #121212;
+  opacity: 0.8;
+}
+
+ul {
+  padding-left: 3.5%;
+}
+
+.matcard {
+  background: #ffffff;
+  border-radius: 15px;
+  border: 1px solid #e0e0e0;
+}
+.cardClicked {
+  border: 1px solid #2fc8b7;
+  box-shadow: 0px 10px 20px rgba(1, 149, 133, 0.08);
+}
+
+.design-job {
+  width: auto;
+}
+
+.dot {
+  height: 0;
+  border: 3px solid #828282;
+  border-radius: 10px;
+}
+
+.card-button-1 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 132%;
+  color: #ff801c;
+  opacity: 0.6;
+  border: none;
+  width: auto;
+}
+
+.card-button-2 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 132%;
+  color: #554bff;
+  opacity: 0.6;
+  border: none;
+  width: auto;
+}
+.asset-button {
+  width: 260px;
+  height: 50px;
+  background: #019585;
+  box-shadow: 0px 0px 15px rgba(1, 149, 133, 0.15);
+  border-radius: 10px;
+  border: none;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 151.5%;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+@media only screen and (max-width: 576px) {
+  .text-9 {
+    font-size: 11px !important;
+  }
+  .text-10 {
+    font-size: 10px !important;
+  }
+  .description {
+    padding-left: 8%;
+  }
+
+  .design-job {
+    padding-left: 0 !important;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 1200px) {
+  .text-9 {
+    font-size: 14px !important;
+  }
+
+  .text-10 {
+    font-size: 12px !important;
+  }
+}

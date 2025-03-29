@@ -1,0 +1,385 @@
+<div class="main-Parent-container">
+  <div
+    class="top-nav container-fluid d-flex justify-content-md-center justify-content-between"
+  >
+    <div
+      class="logo-container d-flex flex-row justify-content-between align-items-end col-md-11 col-12"
+    >
+      <img
+        src="assets/images/logo.png"
+        alt="Logo"
+        class="logo mb-3"
+        routerLink="home"
+        (click)="onNavigate()"
+      />
+      <a
+        routerLink="remote-jobs"
+        [routerLinkActive]="'active'"
+        (click)="onNavigate()"
+        >Remote jobs</a
+      >
+      <a
+        routerLink="coaching"
+        [routerLinkActive]="'active'"
+        (click)="onNavigate()"
+        >Coaching</a
+      >
+      <a routerLink="resources" [routerLinkActive]="'active'">Resources</a>
+      <a
+        routerLink="skill-assesments"
+        [routerLinkActive]="'active'"
+        (click)="onNavigate()"
+        >Skill Assessments</a
+      >
+      <a
+        *ngIf="footerService.isRouteShow"
+        routerLink="employer"
+        [routerLinkActive]="'active'"
+        >Employer</a
+      >
+      <button
+        routerLink="/auth/login"
+        type="button"
+        class="mb-3 signIn-button"
+        *ngIf="footerService.isRouteShow && !user"
+      >
+        Sign in
+      </button>
+      <!-- <button
+        *ngIf="user"
+        (click)="SignOut()"
+        type="button"
+        class="mb-3 signIn-button"
+      >
+        Sign Out
+      </button> -->
+      <!-- <div class="social-div mb-3" *ngIf="footerService.isProfile"> -->
+
+      <div class="social-div mb-3" *ngIf="user">
+        <img
+          src="assets/images/bell-icon.png"
+          alt="Bell-icon"
+          class="Bell-icon-2"
+        />
+        <div
+          *ngIf="!user?.profile?.file"
+          class="profile"
+          routerLink="update-profile"
+        >
+          <img
+            src="assets/images/images/avatar.jpg"
+            alt="Dp"
+            class="Dp-2 w-100 h-100"
+          />
+        </div>
+        <div
+          *ngIf="user?.profile?.file"
+          class="profile"
+          routerLink="update-profile"
+        >
+          <img
+            [src]="baseURl + user?.profile?.file.path"
+            alt="Dp"
+            class="w-100 h-100"
+          />
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div
+              ngbDropdown
+              class="d-inline-block custom-dropdown"
+              placement="bottom-right"
+            >
+              <button
+                type="button"
+                class="btn custom-button"
+                id="dropdownBasic1"
+                ngbDropdownToggle
+              >
+                <img
+                  src="assets/images/expand-arrow.png"
+                  alt="expand-arrow"
+                  class="expand-arrow-2"
+                />
+              </button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem (click)="openUpdateModal()">
+                  Profile
+                </button>
+                <button ngbDropdownItem (click)="SignOut()">Sign out</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <img
+      src="assets/images/logo.png"
+      alt="Logo"
+      class="logo2 mt-5"
+      routerLink="home"
+      (click)="onNavigateSmall()"
+    />
+
+    <div class="menu-container">
+      <div class="social-div-2 mb-5" *ngIf="user">
+        <img
+          src="assets/images/bell-icon.png"
+          alt="Bell-icon"
+          class="Bell-icon"
+        />
+        <div *ngIf="!user?.profile?.file" class="profile">
+          <img
+            src="assets/images/images/avatar.jpg"
+            alt="Dp"
+            class="Dp w-100 h-100"
+          />
+        </div>
+        <div *ngIf="user?.profile?.file" class="profile">
+          <img
+            [src]="baseURl + user?.profile?.file.path"
+            alt="Dp"
+            class="w-100 h-100"
+          />
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div
+              ngbDropdown
+              class="d-inline-block custom-dropdown"
+              placement="bottom-right"
+            >
+              <button
+                type="button"
+                class="btn custom-button"
+                id="dropdownBasic1"
+                ngbDropdownToggle
+              >
+                <img
+                  src="assets/images/expand-arrow.png"
+                  alt="expand-arrow"
+                  class="expand-arrow-2"
+                />
+              </button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem (click)="openUpdateModal()">
+                  Profile
+                </button>
+                <button ngbDropdownItem (click)="SignOut()">Sign out</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        routerLink="/auth/login"
+        type="button"
+        class="signIn-button-2"
+        *ngIf="footerService.isRouteShow && !user"
+      >
+        Sign in
+      </button>
+      <div class="mobile-nav-container">
+        <img
+          src="assets/images/nav-bar-icon.jfif"
+          [class.show]="!expand"
+          [class.hide]="expand"
+          alt=""
+          (click)="expand = true"
+          height="20px"
+          width="25px"
+        />
+        <img
+          src="assets/images/times-icon.jfif"
+          [class.show]="expand"
+          [class.hide]="!expand"
+          alt=""
+          (click)="expand = false"
+          height="25px"
+          width="25px"
+        />
+
+        <div
+          class="right-container"
+          [class.display]="expand"
+          [class.hide]="!expand"
+        >
+          <div
+            class="fortcel-mig-mere-container"
+            [class.hide-fortcel-mig-mere-container]="!showList"
+          >
+            <div class="column">
+              <div
+                class="d-flex flex-column justify-content-between menu-items"
+                style="margin-top: -265px"
+              >
+                <div class="border-bottom">
+                  <a
+                    routerLink="remote-jobs"
+                    class="mx-4 d-flex align-items-center"
+                    (click)="onNavigateSmall(); onClick()"
+                  >
+                    Remote jobs</a
+                  >
+                </div>
+                <div class="border-bottom">
+                  <a
+                    routerLink="coaching"
+                    class="mx-4 d-flex align-items-center"
+                    (click)="onNavigateSmall(); onClick()"
+                    >Coaching</a
+                  >
+                </div>
+                <div class="border-bottom">
+                  <a
+                    href=""
+                    class="mx-4 d-flex align-items-center"
+                    (click)="onClick()"
+                    >Resources</a
+                  >
+                </div>
+                <div class="border-bottom">
+                  <a
+                    routerLink="skill-assesments"
+                    class="mx-4 d-flex align-items-center"
+                    (click)="onNavigateSmall(); onClick()"
+                    >Skill Assessments</a
+                  >
+                </div>
+
+                <div class="border-bottom">
+                  <a
+                    href=""
+                    class="mx-4 d-flex align-items-center"
+                    *ngIf="footerService.isRouteShow"
+                    (click)="onClick()"
+                    >Employer</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #updateProfile>
+  <div class="modalForm update-profile">
+    <div class="modal-body update">
+      <div class="d-flex flex-column align-items-center">
+        <div
+          class="mt-2 d-flex flex-row justify-content-between align-items-center col-11"
+        >
+          <span class="text-11">Update your profile details</span>
+          <div class="cursor-pointer">
+            <img
+              src="assets/images/close-circle.png"
+              alt="icon"
+              (click)="dismissAll()"
+            />
+          </div>
+        </div>
+
+        <div class="basic-detail mt-4 col-11">
+          <span class="text-13">Basic details</span>
+        </div>
+
+        <div class="mt-4 col-11">
+          <span class="text-14">Upload profile photo</span>
+        </div>
+
+        <div class="d-flex flex-row mt-3 col-11">
+          <div class="image-parent">
+            <div class="h-100 w-100">
+              <img
+                *ngIf="!previewImage && profilePic"
+                [src]="baseURl + profilePic"
+                alt="Dp"
+              />
+              <img *ngIf="previewImage" [src]="previewImage" alt="Dp" />
+            </div>
+            <!-- <div class="dl8-icon">
+              <img src="assets/images/dl8.png" alt="icon" />
+            </div> -->
+            <input
+              type="file"
+              class="fileInput"
+              (change)="selectFile($event)"
+            />
+          </div>
+
+          <div class="d-flex flex-column justify-content-center mx-3">
+            <span class="text-15 mt-2">Update file</span>
+            <span class="text-16">Make sure the file is below 2mb</span>
+          </div>
+        </div>
+
+        <form class="col-11 mt-5" [formGroup]="updateProfileForm">
+          <div class="col-12">
+            <span class="text-17">
+              First name <span class="star">*</span>
+            </span>
+            <input
+              type="text"
+              class="form-control mt-2"
+              id="firstName"
+              formControlName="firstName"
+            />
+          </div>
+          <div class="col-12 mt-4">
+            <span class="text-17"> Last name <span class="star">*</span> </span>
+            <input
+              type="text"
+              class="form-control mt-2"
+              id="lastName"
+              formControlName="lastName"
+            />
+          </div>
+
+          <div class="col-12 mt-4">
+            <span class="text-17"
+              >What gender do you identify as?
+              <span class="star">*</span>
+            </span>
+            <select
+              class="form-select mt-2"
+              aria-label="Default select example"
+              formControlName="gender"
+            >
+              <option selected hidden value="">Choose</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="other">other</option>
+            </select>
+          </div>
+
+          <div class="mt-4">
+            <label for="exampleFormControlTextarea1" class="text-17"
+              >Bio<span class="star">*</span>
+            </label>
+            <textarea
+              class="form-control text-area mt-2"
+              id="bio"
+              formControlName="bio"
+              rows="5"
+            ></textarea>
+          </div>
+          <div class="d-flex justify-content-center align-items-center my-4">
+            <button
+              type="button"
+              (click)="updateProfileClick()"
+              class="update-button"
+            >
+              Update
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-template>

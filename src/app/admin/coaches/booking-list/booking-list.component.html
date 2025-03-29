@@ -1,0 +1,127 @@
+<div class="d-flex flex-column align-items-center">
+  <!-- <button (click)="generateLink()">Test</button> -->
+  <div class="col-11 mt-5">
+    <table class="table">
+      <thead class="backGround">
+        <tr>
+          <th class="col">#</th>
+          <th class="col">Name</th>
+          <th class="col">Email</th>
+          <th class="col">Phone</th>
+          <th class="col">SlotDate</th>
+          <th class="col">SlotTime</th>
+          <th class="col">Status</th>
+          <th class="col">Meeting Link</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="bookingList?.length">
+        <tr *ngFor="let item of bookingList; let i = index">
+          <th>{{ i + 1 }}</th>
+          <td>{{ item.name }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.phone }}</td>
+          <td>{{ item.slotDate | date : "mediumDate" }}</td>
+          <td>{{ item.slotTime }}</td>
+          <td>{{ item.booking_status }}</td>
+          <td class="d-flex">
+            <div style="width: 130px; height: 40px; margin-inline-end: 10px">
+              <button
+                type="button"
+                class="detail_button w-100 h-100"
+                [disabled]="item.meeting_data"
+                (click)="generateLink(item)"
+              >
+                {{ item.meeting_data ? "Generated" : "Generate" }}
+              </button>
+            </div>
+
+            <div style="width: 130px; height: 40px">
+              <button
+                type="button"
+                class="detail_button w-100 h-100"
+                (click)="openAddModal(item)"
+              >
+                Add Link
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="!bookingList.length">
+      <p class="p-4 text-center">No result found</p>
+    </div>
+    <nav aria-label="Page navigation" *ngIf="bookingList?.length">
+      <ul class="pagination">
+        <li class="page-item" [class.disabled]="currentPage === 1">
+          <a class="page-link" (click)="changePage(currentPage - 1)"
+            >Previous</a
+          >
+        </li>
+
+        <li
+          class="page-item"
+          *ngFor="let page of pageNumbers"
+          [class.active]="currentPage === page"
+        >
+          <a class="page-link" *ngIf="page !== -1" (click)="changePage(page)">{{
+            page
+          }}</a>
+          <a class="page-link" *ngIf="page === -1">&hellip;</a>
+        </li>
+
+        <li class="page-item" [class.disabled]="currentPage === totalPages">
+          <a class="page-link" (click)="changePage(currentPage + 1)">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<ng-template #addModal>
+  <div class="modalForm update-profile">
+    <div class="modal-body update">
+      <div class="d-flex flex-column align-items-center">
+        <div
+          class="mt-2 d-flex flex-row justify-content-between align-items-center col-11"
+        >
+          <span class="modal-header-text">Add Meeting Link</span>
+          <div class="cursor-pointer">
+            <img
+              src="assets/images/close-circle.png"
+              alt="icon"
+              (click)="dismissAll()"
+            />
+          </div>
+        </div>
+
+        <div class="row mt-4 w-100">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="meetingLink"
+              name="meetingLink"
+              placeholder="Meeting link"
+            />
+          </div>
+        </div>
+
+        <div
+          class="d-flex justify-content-center align-items-center my-4 w-100"
+        >
+          <button type="button" class="modal-cancel-btn" (click)="dismissAll()">
+            Cancel
+          </button>
+          <button
+            type="button"
+            class="modal-delete-btn ms-3"
+            (click)="sendMeetingLink()"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,241 @@
+<div class="d-center h-100">
+  <div class="login-container col-xl-5 col-lg-6 col-md-7 col-sm-10 col-11">
+    <div class="row">
+      <div
+        class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center"
+      >
+        <h1 class="main-heading">
+          {{ id === "add" ? "Create Job" : "Update Job" }}
+        </h1>
+      </div>
+    </div>
+
+    <form [formGroup]="jobForm">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            formControlName="title"
+            placeholder="Title"
+          />
+          <div
+            *ngIf="
+              jobForm.controls['title'].invalid &&
+              jobForm.controls['title'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Title is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <angular-editor
+            [placeholder]="'Description'"
+            formControlName="description"
+            name="description"
+            [config]="config"
+          ></angular-editor>
+
+          <div
+            *ngIf="
+              jobForm.controls['description'].invalid &&
+              jobForm.controls['description'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Description is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <select
+            class="form-select"
+            formControlName="company"
+            (change)="ChangeCompany($event)"
+          >
+            <option selected hidden value="">Company</option>
+            <option *ngFor="let option of empList" [ngValue]="option._id">
+              {{ option.fullName }}
+            </option>
+          </select>
+        </div>
+        <div
+          *ngIf="
+            jobForm.controls['company'].invalid &&
+            jobForm.controls['company'].touched
+          "
+          class="text-danger mt-2"
+        >
+          Company is required
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <input
+            type="text"
+            class="form-control"
+            id="salaryFrom"
+            formControlName="salaryFrom"
+            placeholder="Salary From"
+            min="1"
+            pattern="[0-9,]*"
+          />
+          <div
+            *ngIf="
+              jobForm.get('salaryFrom')?.hasError('required') &&
+              jobForm.controls['salaryFrom'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Salary from is required
+          </div>
+
+          <div
+            *ngIf="jobForm.get('salaryFrom')?.hasError('pattern')"
+            class="text-danger mt-2"
+          >
+            Please enter valid salary
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <input
+            type="text"
+            class="form-control"
+            id="salaryTo"
+            formControlName="salaryTo"
+            placeholder="Salary To"
+            pattern="[0-9,]*"
+          />
+          <div
+            *ngIf="
+              jobForm.get('salaryTo')?.hasError('required') &&
+              jobForm.controls['salaryTo'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Salary to is required
+          </div>
+
+          <div
+            *ngIf="jobForm.get('salaryTo')?.hasError('pattern')"
+            class="text-danger mt-2"
+          >
+            Please enter valid salary
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="jobType"
+            formControlName="jobType"
+          >
+            <option selected hidden value="">Job Type</option>
+
+            <option *ngFor="let type of Jobs" [value]="type">{{ type }}</option>
+          </select>
+          <div
+            *ngIf="
+              jobForm.controls['jobType'].invalid &&
+              jobForm.controls['jobType'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Job type is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="jobCategory"
+            formControlName="job"
+            (change)="ChangeCategory($event)"
+          >
+            <option selected hidden value="">Job Category</option>
+            <option
+              *ngFor="let category of JobCategory"
+              [ngValue]="category._id"
+            >
+              {{ category.title }}
+            </option>
+          </select>
+          <div
+            *ngIf="
+              jobForm.controls['job'].invalid && jobForm.controls['job'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Job category is required
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4" *ngIf="job_id">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="status"
+            formControlName="status"
+          >
+            <option selected hidden value="">Job status</option>
+            <option *ngFor="let item of JobStatus" [value]="item">
+              {{ item }}
+            </option>
+          </select>
+          <div
+            *ngIf="
+              jobForm.controls['status'].invalid &&
+              jobForm.controls['status'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Job status is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div
+          class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center mt-2"
+        >
+          <div class="col-sm-4 col-6">
+            <button
+              type="button"
+              class="login-button w-100 h-100"
+              (click)="onClick()"
+              *ngIf="id === 'add'"
+            >
+              Create
+            </button>
+            <button
+              type="button"
+              class="login-button w-100 h-100"
+              (click)="updatejobs()"
+              *ngIf="id !== 'add'"
+            >
+              Update
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

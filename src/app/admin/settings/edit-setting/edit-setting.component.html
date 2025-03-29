@@ -1,0 +1,253 @@
+<div class="d-center h-100">
+  <div class="login-container col-xl-5 col-lg-6 col-md-7 col-sm-10 col-11">
+    <div class="row">
+      <div
+        class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center"
+      >
+        <h1 class="main-heading">Update Setting</h1>
+      </div>
+    </div>
+
+    <form [formGroup]="settingForm">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <label>Bank Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="Bank_Name"
+            formControlName="Bank_Name"
+            placeholder="Add Bank Name"
+          />
+          <div
+            *ngIf="
+              settingForm.controls['Bank_Name'].invalid &&
+              settingForm.controls['Bank_Name'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Bank Name is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <label>Address</label>
+
+          <input
+            type="text"
+            class="form-control"
+            id="Address"
+            formControlName="Address"
+            placeholder="Add Address"
+          />
+          <div
+            *ngIf="
+              settingForm.controls['Address'].invalid &&
+              settingForm.controls['Address'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Address is required
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <label>Bank Branch Name</label>
+
+          <input
+            type="text"
+            class="form-control"
+            id="Bank_Branch_Name"
+            formControlName="Bank_Branch_Name"
+            placeholder="Add Bank Branch Name"
+          />
+          <div
+            *ngIf="
+              settingForm.controls['Bank_Branch_Name'].invalid &&
+              settingForm.controls['Bank_Branch_Name'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Bank Branch Name is required
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <label>Account Number</label>
+
+          <input
+            type="text"
+            class="form-control"
+            id="Account_Number"
+            formControlName="Account_Number"
+            placeholder="Add Account Number"
+          />
+          <div
+            *ngIf="
+              settingForm.controls['Account_Number'].invalid &&
+              settingForm.controls['Account_Number'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Account Number is required
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <label>Bank Account Holder</label>
+
+          <input
+            type="text"
+            class="form-control"
+            id="Bank_Account_Holder"
+            formControlName="Bank_Account_Holder"
+            placeholder="Add Bank Account Holder"
+          />
+          <div
+            *ngIf="
+              settingForm.controls['Bank_Account_Holder'].invalid &&
+              settingForm.controls['Bank_Account_Holder'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Bank Account Holder name is required
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <label>Swift Code</label>
+
+          <input
+            type="text"
+            class="form-control"
+            id="Swift_Code"
+            formControlName="Swift_Code"
+            placeholder="Add Swift Code"
+          />
+          <div
+            *ngIf="
+              settingForm.controls['Swift_Code'].invalid &&
+              settingForm.controls['Swift_Code'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Swift Code is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <label>Technical</label>
+
+          <input
+            type="text"
+            class="form-control"
+            id="Technical"
+            formControlName="Technical"
+            placeholder="Add Technical"
+          />
+          <div
+            *ngIf="
+              settingForm.controls['Technical'].invalid &&
+              settingForm.controls['Technical'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Technical is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <label>Soft</label>
+
+          <input
+            type="text"
+            class="form-control"
+            id="Soft"
+            formControlName="Soft"
+            placeholder="Add Soft"
+          />
+          <div
+            *ngIf="
+              settingForm.controls['Soft'].invalid &&
+              settingForm.controls['Soft'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Soft is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <label>English</label>
+
+          <input
+            type="text"
+            class="form-control"
+            id="English"
+            formControlName="English"
+            placeholder="Add English"
+          />
+          <div
+            *ngIf="
+              settingForm.controls['English'].invalid &&
+              settingForm.controls['English'].touched
+            "
+            class="text-danger mt-2"
+          >
+            English is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <label>Career</label>
+
+          <input
+            type="text"
+            class="form-control"
+            id="Career"
+            formControlName="Career"
+            placeholder="Add Career"
+          />
+          <div
+            *ngIf="
+              settingForm.controls['Career'].invalid &&
+              settingForm.controls['Career'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Career is required
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div
+          class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center mt-2"
+        >
+          <div class="col-sm-4 col-6">
+            <button
+              type="button"
+              class="login-button w-100 h-100"
+              (click)="updateSetting()"
+            >
+              Update
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

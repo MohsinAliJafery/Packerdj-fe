@@ -1,0 +1,110 @@
+<div class="d-center h-100">
+  <div
+    class="login-container col-xl-8 col-xxl-6 col-lg-9 col-md-9 col-sm-10 col-11"
+  >
+    <div class="row">
+      <div
+        class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center"
+      >
+        <h1 class="main-heading">
+          {{ faq_id ? "Update FAQs" : "Create FAQs" }}
+        </h1>
+      </div>
+    </div>
+
+    <form [formGroup]="faqsForm">
+      <div formArrayName="faqs">
+        <div
+          *ngFor="let item of faqs.controls; let i = index"
+          [formGroupName]="i"
+        >
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="title"
+                placeholder="Title"
+              />
+              <div
+                *ngIf="item.get('title')?.invalid && item.get('title')?.touched"
+                class="text-danger mt-2"
+              >
+                Title is required.
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+              <textarea
+                class="form-control text-area"
+                id="exampleFormControlTextarea1"
+                rows="10"
+                placeholder="Description"
+                id="description"
+                formControlName="description"
+              ></textarea>
+              <div
+                *ngIf="
+                  item.get('description')?.invalid &&
+                  item.get('description')?.touched
+                "
+                class="text-danger mt-2"
+              >
+                Description is required
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4 mb-4">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <button
+                type="button"
+                class="add_button w-100 h-100"
+                (click)="removeFaq(i)"
+              >
+                - &nbsp; Remove
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <button
+              type="button"
+              class="add_button w-100 h-100"
+              (click)="addFaq()"
+              [disabled]="faqsForm.controls['faqs'].invalid"
+            >
+              + &nbsp; Add More
+            </button>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div
+            class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center mt-2"
+          >
+            <div class="col-sm-4 col-6">
+              <button
+                type="button"
+                class="login-button w-100 h-100"
+                (click)="onClick()"
+                *ngIf="!faq_id"
+              >
+                Add
+              </button>
+              <button
+                type="button"
+                class="login-button w-100 h-100"
+                (click)="updateFaqs()"
+                *ngIf="faq_id"
+              >
+                Update
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

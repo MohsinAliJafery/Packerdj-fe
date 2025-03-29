@@ -1,0 +1,30 @@
+.backGround {
+  background-color: #019585;
+  color: white;
+  font-size: 17px;
+  height: 50px;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.create-button {
+  box-shadow: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 24px;
+  gap: 4px;
+  width: 127px;
+  height: 54px;
+  background: #019585;
+  border-radius: 10px;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+}

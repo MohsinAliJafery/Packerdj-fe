@@ -1,0 +1,179 @@
+<div class="main-Parent-container">
+  <div class="top-nav container-fluid">
+    <div class="logo-container d-flex justify-content-center align-items-end">
+      <img src="assets/images/logo.png" alt="" class="logo mb-3" />
+    </div>
+  </div>
+  <div
+    class="login d-flex flex-md-row flex-sm-column flex-column col-12 mt-5 align-items-md-start align-items-sm-center align-items-center"
+  >
+    <div
+      class="login d-flex flex-column col-md-6 col-sm-8 col-12 align-items-center"
+    >
+      <div
+        class="d-flex flex-column col-xl-8 col-lg-10 col-md-11 col-sm-12 col-11 text-container justify-content-between"
+      >
+        <span class="text-1">Welcome to Pekerdja</span>
+        <span class="text-6"
+          >Connect with us and our users around the world.</span
+        >
+      </div>
+      <div
+        class="d-flex flex-column col-xl-8 col-lg-10 col-md-11 col-sm-12 col-11 mt-4 button-container justify-content-between align-items-center"
+      >
+        <asl-google-signin-button
+          (signIn)="onGoogleSignIn($event)"
+          type="standard"
+          size="large"
+        ></asl-google-signin-button>
+
+        <!-- <button
+          type="button"
+          class="btn btn-primary google-button d-flex justify-content-center align-items-center my-3"
+        >
+          <div class="button-text">
+            <img src="assets/images/google logo.png" alt="logo" /> Continue with
+            Google
+          </div>
+        </button> -->
+        <a
+          [href]="url"
+          type="button"
+          class="btn btn-primary linked-in-button d-flex justify-content-center align-items-center mt-3"
+        >
+          <div>
+            <img src="assets/images/in logo.png" alt="logo" class="me-2" />
+            Continue with Linked in
+          </div>
+        </a>
+      </div>
+
+      <div
+        class="d-flex flex-row align-items-center col-xl-8 col-lg-10 col-md-11 col-sm-12 col-11 OR-container"
+      >
+        <div class="line"></div>
+        <div class="text-2">OR</div>
+        <div class="line"></div>
+      </div>
+
+      <div
+        class="d-flex flex-column col-xl-8 col-lg-10 col-md-11 col-sm-12 col-11 form-container justify-content-between"
+      >
+        <span class="text-3 mx-2 mb-2">Email Adress</span>
+        <div class="formChild-container">
+          <form
+            [formGroup]="loginForm"
+            class="d-flex flex-column justify-content-between"
+          >
+            <div class="form-group col-12">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="email"
+                placeholder="Your email adress"
+              />
+              <div
+                *ngIf="
+                  loginForm.controls['email'].invalid &&
+                  loginForm.controls['email'].touched
+                "
+                class="text-danger mt-2"
+              >
+                <div *ngIf="loginForm.controls['email'].hasError('required')">
+                  Email is required
+                </div>
+                <div *ngIf="loginForm.controls['email'].hasError('email')">
+                  Invalid email address
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-12 mt-4">
+              <div class="text-3 mx-2 mb-2">Password</div>
+
+              <input
+                type="password"
+                class="form-control"
+                formControlName="password"
+                placeholder="Your password"
+              />
+              <div
+                *ngIf="
+                  loginForm.controls['password'].invalid &&
+                  loginForm.controls['password'].touched
+                "
+                class="text-danger mt-2"
+              >
+                <div
+                  *ngIf="loginForm.controls['password'].hasError('required')"
+                >
+                  Password is required
+                </div>
+                <div
+                  *ngIf="loginForm.controls['password'].hasError('minlength')"
+                >
+                  Password should be at least 8 characters long
+                </div>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="email-button col-12 mt-4"
+              (click)="Login()"
+            >
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div
+        class="d-flex justify-content-between col-xl-8 col-lg-10 col-md-11 col-sm-12 col-11"
+      >
+        <a routerLink="/auth/register" class="text-4 mt-2">Register here</a>
+        <a routerLink="/auth/forgetPassword" class="text-4 mt-2"
+          >Forgot Password?</a
+        >
+      </div>
+
+      <div class="mt-4 col-xl-8 col-lg-10 col-md-11 privacy_div">
+        <span class="text-4"
+          >By continuing, you agree to the
+          <strong class="text-5">Terms of use, Privacy Policy</strong> of
+          Pekerdja
+        </span>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-sm-8 col-11 login">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide col-xl-10 col-lg-11 col-md-12 col-sm-12 col-md-1 mt-2 mx-xl-5 mx-xxl-5 mx-lg-4"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              class="d-block w-100 h-100"
+              src="assets/images/image 48.png"
+              alt="First slide"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100 h-100"
+              src="assets/images/image 49.png"
+              alt="Second slide"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100 h-100"
+              src="assets/images/image 50.png"
+              alt="Third slide"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

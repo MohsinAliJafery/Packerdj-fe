@@ -1,0 +1,643 @@
+<div class="d-center h-100">
+  <div class="login-container col-xl-5 col-lg-6 col-md-7 col-sm-10 col-11">
+    <div class="row">
+      <div
+        class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center"
+      >
+        <h1 class="main-heading">Update Coach</h1>
+      </div>
+    </div>
+
+    <form [formGroup]="coachesForm">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <input
+            type="text"
+            class="form-control"
+            id="fullName"
+            formControlName="fullName"
+            placeholder="Full Name"
+          />
+          <div
+            *ngIf="
+              coachesForm.controls['fullName'].invalid &&
+              coachesForm.controls['fullName'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Full name is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            formControlName="email"
+            placeholder="Email"
+          />
+          <div
+            *ngIf="
+              coachesForm.controls['email'].invalid &&
+              coachesForm.controls['email'].touched
+            "
+            class="text-danger mt-2"
+          >
+            <div *ngIf="coachesForm.controls['email'].hasError('required')">
+              Email is required
+            </div>
+            <div *ngIf="coachesForm.controls['email'].hasError('email')">
+              Invalid email address
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <textarea
+            class="form-control text-area"
+            id="exampleFormControlTextarea1"
+            rows="10"
+            placeholder="Description"
+            id="description"
+            formControlName="description"
+          ></textarea>
+          <div
+            *ngIf="
+              coachesForm.controls['description'].invalid &&
+              coachesForm.controls['description'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Description is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <input
+            type="text"
+            class="form-control"
+            id="designation"
+            formControlName="designation"
+            placeholder="Designation"
+          />
+          <div
+            *ngIf="
+              coachesForm.controls['designation'].invalid &&
+              coachesForm.controls['designation'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Curent designation is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <input
+            type="text"
+            class="form-control"
+            id="company"
+            formControlName="company"
+            placeholder="Company"
+          />
+          <div
+            *ngIf="
+              coachesForm.controls['company'].invalid &&
+              coachesForm.controls['company'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Current company is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="category"
+            formControlName="category"
+            (change)="onCategoryChange($event)"
+          >
+            <option selected hidden value="">Coach Category</option>
+            <option
+              *ngFor="let category of CoachCategoryList"
+              [ngValue]="category._id"
+            >
+              {{ category.title }}
+            </option>
+          </select>
+          <div
+            *ngIf="
+              coachesForm.controls['category'].invalid &&
+              coachesForm.controls['category'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Coach category is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="type"
+            formControlName="type"
+            (change)="onTypeChange($event)"
+          >
+            <option selected hidden value="">Coach Type</option>
+            <option *ngFor="let type of CoachTypeList" [ngValue]="type._id">
+              {{ type.title }}
+            </option>
+          </select>
+          <div
+            *ngIf="
+              coachesForm.controls['type'].invalid &&
+              coachesForm.controls['type'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Coach type is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <input
+            type="text"
+            class="form-control"
+            id="link"
+            formControlName="link"
+            placeholder="Pre Assessment task link"
+          />
+          <div
+            *ngIf="
+              coachesForm.controls['link'].invalid &&
+              coachesForm.controls['link'].touched
+            "
+            class="text-danger mt-2"
+          >
+            Link is required
+          </div>
+        </div>
+      </div>
+
+      <h3 class="mt-2">Expertise</h3>
+      <div class="form-check" *ngFor="let item of expertiseList">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          [value]="item"
+          [checked]="item.selected"
+          (change)="updateExpertise(item, $event)"
+        />
+        <label class="form-check-label">{{ item.label }}</label>
+      </div>
+      <div
+        *ngIf="coachesForm.get('expertise')?.errors?.['required']"
+        class="text-danger"
+      >
+        Please select at least one experty.
+      </div>
+      <button (click)="selectExpertise()" class="select-button">
+        Select All
+      </button>
+
+      <h3 class="mt-2">Fluent In</h3>
+      <div class="form-check" *ngFor="let item of FluentinList">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          [value]="item"
+          [checked]="item.selected"
+          (change)="updateFluent(item, $event)"
+        />
+        <label class="form-check-label">{{ item.label }}</label>
+      </div>
+      <div
+        *ngIf="coachesForm.get('fluentIn')?.errors?.['required']"
+        class="text-danger"
+      >
+        Please select at least one fluent language.
+      </div>
+      <button (click)="selectFluent()" class="select-button">Select All</button>
+
+      <div
+        class="mt-3"
+        ng-repeat="star in parseRating(place.input) track by $index"
+      >
+        <img *ngFor="let url of urls" [src]="url" height="100px" width="70px" />
+        <input
+          type="file"
+          formArrayName="multiImage"
+          (change)="onSelect($event)"
+        />
+      </div>
+
+      <!-- experience form Start from here  -->
+      <h2 class="mt-4">Experience</h2>
+      <div formArrayName="experiences">
+        <div
+          *ngFor="let experience of experiences.controls; let i = index"
+          [formGroupName]="i"
+        >
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="title"
+                placeholder="Title"
+              />
+              <div
+                *ngIf="
+                  experience.get('title')?.invalid &&
+                  experience.get('title')?.touched
+                "
+                class="text-danger mt-2"
+              >
+                Title is required.
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+              <label for=""> From </label>
+              <input type="date" class="form-control" formControlName="from" />
+              <div
+                *ngIf="
+                  experience.get('from')?.invalid &&
+                  experience.get('from')?.touched
+                "
+                class="text-danger mt-2"
+              >
+                From date is required.
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+              <label for=""> To </label>
+              <input type="date" class="form-control" formControlName="to" />
+              <div
+                *ngIf="
+                  experience.get('to')?.invalid && experience.get('to')?.touched
+                "
+                class="text-danger mt-2"
+              >
+                To date is required.
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+              <textarea
+                class="form-control text-area"
+                id="exampleFormControlTextarea1"
+                rows="10"
+                placeholder="Description"
+                id="description"
+                formControlName="description"
+              ></textarea>
+              <div
+                *ngIf="
+                  experience.get('description')?.invalid &&
+                  experience.get('description')?.touched
+                "
+                class="text-danger mt-2"
+              >
+                Description is required
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4 mb-4">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <button
+                type="button"
+                class="add_button w-100 h-100"
+                (click)="removeExperience(i)"
+              >
+                - &nbsp; Remove
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <button
+              type="button"
+              class="add_button w-100 h-100"
+              (click)="addExperience()"
+              [disabled]="coachesForm.controls['experiences'].invalid"
+            >
+              + &nbsp; Add More
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- experience form ends here  -->
+
+      <!-- education form starts from here  -->
+      <h2 class="mt-4">Education</h2>
+      <div formArrayName="education">
+        <div
+          *ngFor="let education of education.controls; let i = index"
+          [formGroupName]="i"
+        >
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="title"
+                placeholder="Title"
+              />
+              <div
+                *ngIf="
+                  education.get('title')?.invalid &&
+                  education.get('title')?.touched
+                "
+                class="text-danger mt-2"
+              >
+                Title is required.
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="institute"
+                placeholder="Institute"
+              />
+              <div
+                *ngIf="
+                  education.get('institute')?.invalid &&
+                  education.get('institute')?.touched
+                "
+                class="text-danger mt-2"
+              >
+                institute is required.
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+              <label for=""> From </label>
+              <input type="date" class="form-control" formControlName="from" />
+              <div
+                *ngIf="
+                  education.get('from')?.invalid &&
+                  education.get('from')?.touched
+                "
+                class="text-danger mt-2"
+              >
+                From date is required.
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+              <label for=""> To </label>
+              <input type="date" class="form-control" formControlName="to" />
+              <div
+                *ngIf="
+                  education.get('to')?.invalid && education.get('to')?.touched
+                "
+                class="text-danger mt-2"
+              >
+                To date is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4 mb-4">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <button
+                type="button"
+                class="add_button w-100 h-100"
+                (click)="removeEducation(i)"
+              >
+                - &nbsp; Remove
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <button
+              type="button"
+              class="add_button w-100 h-100"
+              (click)="addEducation()"
+              [disabled]="coachesForm.controls['education'].invalid"
+            >
+              + &nbsp; Add More
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- education form ends here  -->
+
+      <!-- coaching starts from here  -->
+      <h2 class="mt-4">Coaching Service</h2>
+      <div formArrayName="coaching">
+        <div
+          *ngFor="let coaching of coaching.controls; let i = index"
+          [formGroupName]="i"
+        >
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="title"
+                placeholder="Title"
+              />
+              <div
+                *ngIf="
+                  coaching.get('title')?.invalid &&
+                  coaching.get('title')?.touched
+                "
+                class="text-danger mt-2"
+              >
+                Title is required.
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+              <label for=""> Duration in minutes </label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="duration"
+                placeholder="Duration"
+              />
+              <div
+                *ngIf="
+                  coaching.get('duration')?.invalid &&
+                  coaching.get('duration')?.touched
+                "
+                class="text-danger mt-2"
+              >
+                Duration is required.
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+              <label for=""> Charges in RP </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="charges"
+                placeholder="Charges"
+                pattern="[0-9,]*"
+              />
+
+              <div
+                *ngIf="
+                  coaching.get('charges')?.hasError('required') &&
+                  coaching.get('charges')?.touched
+                "
+                class="text-danger mt-2"
+              >
+                Charges are required.
+              </div>
+
+              <div
+                *ngIf="coaching.get('charges')?.hasError('pattern')"
+                class="text-danger mt-2"
+              >
+                Please enter valid charges
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4 mb-4">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <button
+                type="button"
+                class="add_button w-100 h-100"
+                (click)="removeCoach(i)"
+              >
+                - &nbsp; Remove
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <button
+              type="button"
+              class="add_button w-100 h-100"
+              (click)="addCoaching()"
+              [disabled]="coachesForm.controls['coaching'].invalid"
+            >
+              + &nbsp; Add More
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- coaching form ends here  -->
+
+      <!-- slot starts from here  -->
+      <h2 class="mt-4">Slot</h2>
+      <div formArrayName="slot">
+        <div *ngFor="let k of slot.controls; let i = index" [formGroupName]="i">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <label for=""> Date </label>
+              <input
+                type="date"
+                class="form-control"
+                formControlName="date"
+                [min]="currentDate"
+              />
+              <div
+                *ngIf="k.get('date')?.invalid && k.get('date')?.touched"
+                class="text-danger mt-2"
+              >
+                Date is required.
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+              <label for=""> From </label>
+              <input type="time" class="form-control" formControlName="from" />
+              <div
+                *ngIf="k.get('from')?.invalid && k.get('from')?.touched"
+                class="text-danger mt-2"
+              >
+                Time is required.
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+              <label for=""> To </label>
+              <input type="time" class="form-control" formControlName="to" />
+              <div
+                *ngIf="k.get('to')?.invalid && k.get('to')?.touched"
+                class="text-danger mt-2"
+              >
+                Time is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4 mb-4">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <button
+                type="button"
+                class="add_button w-100 h-100"
+                (click)="removeSlot(i)"
+              >
+                - &nbsp; Remove
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <button
+              type="button"
+              class="add_button w-100 h-100"
+              (click)="addSlot()"
+              [disabled]="coachesForm.controls['slot'].invalid"
+            >
+              + &nbsp; Add More
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- slot form ends here  -->
+
+      <div class="row mt-4">
+        <div
+          class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center mt-2"
+        >
+          <div class="col-sm-4 col-6">
+            <button
+              type="button"
+              class="login-button w-100 h-100"
+              (click)="updateCoach()"
+            >
+              Update
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

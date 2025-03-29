@@ -1,0 +1,74 @@
+<div class="main-Parent-container d-flex flex-column justify-content-between">
+  <div
+    class="footer-container row container-fluid d-flex flex-sm-row flex-column justify-content-lg-around justify-content-sm-between justify-content-between align-items-sm-start align-items-center mt-5"
+  >
+    <div
+      class="d-flex flex-column justify-content-between footer-child col-xxl-4 col-lg-5 col-md-7 col-sm-8 col-11"
+    >
+      <img src="assets/images/logo.png" alt="Logo" class="logo" />
+      <span class="text-1"
+        >Copyright © 2023 Pekerdja | All Rights Reserved
+      </span>
+      <div class="social-media d-flex justify-content-between">
+        <a href="<%= Facebook_Link.content %>" target="_blank">
+          <img src="assets/images/Vector.png" alt="fb Logo" />
+        </a>
+        <a href="<%= Instagram_Link.content %>" target="_blank">
+          <img src="assets/images/Instagram.png" alt="insta Logo" />
+        </a>
+        <a href="<%= LinkedinLink.content %>" target="_blank">
+          <img src="assets/images/LinkedIn.png" alt="linkedin Logo" />
+        </a>
+        <!-- <a href="https://www.linkedin.com/company/pekerdja/" target="_blank">
+          <img src="assets/images/LinkedIn.png" alt="linkedin Logo" />
+        </a> -->
+      </div>
+    </div>
+    <div
+      class="col-xxl-1 col-md-2 col-sm-3 col-11 d-flex flex-sm-column flex-row justify-content-between align-items-sm-start align-items-center footer-menu mt-sm-0 mt-2"
+    >
+      <span class="text-2">Menu</span>
+      <a href="">About us</a>
+      <a href="">Contact us</a>
+      <a href="">Privacy Policy</a>
+      <a href="">Terms of Use</a>
+    </div>
+
+    <div
+      class="col-lg-4 col-md-6 col-sm-7 col-11 d-flex flex-column justify-content-between footer-child-3 mt-sm-0 mt-2"
+    >
+      <span class="text-3">Subscribe to our newsletter</span>
+      <span class="text-4 mt-4"
+        >Lorem ipsum dolor sit amet consectetur dipiscing elit aliquam mauris
+        sed ma</span
+      >
+      <div></div>
+      <form
+        class="d-flex flex-sm-row flex-column justify-content-between col-xl-10 col-lg-12 col-md-10 col-sm-12 col-12 mt-4"
+      >
+        <!-- <input type="text" class="input-field col-sm-7 col-12" placeholder="Enter your Email"> -->
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control col-sm-11 col-sm-11 col-12"
+            id="exampleInputPassword1"
+            placeholder="Enter your Email"
+          />
+        </div>
+        <button type="button" class="subscribe-button" routerLink="">
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom col-sm-12 col-10 d-flex justify-content-end">
+    <div
+      class="footer-bottom-child d-flex justify-content-between mx-5 cursor-pointer"
+      (click)="backToTop()"
+    >
+      <span class="text-5">Back to Top </span>
+      <img src="assets/images/arrow-up.png" alt="arrow" />
+    </div>
+  </div>
+</div>

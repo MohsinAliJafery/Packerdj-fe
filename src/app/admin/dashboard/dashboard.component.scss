@@ -1,0 +1,24 @@
+.sidenav {
+  width: 200px;
+  height: 97vh;
+}
+.content {
+  padding: 20px 0;
+  width: calc(100% - 200px);
+  overflow-y: hidden;
+}
+
+@media (min-width: 992px) {
+  .sidenav {
+    display: block;
+  }
+}
+@media (max-width: 992px) {
+  .sidenav {
+    display: none;
+  }
+  .content {
+    width: 100% !important;
+    overflow-y: hidden;
+  }
+}

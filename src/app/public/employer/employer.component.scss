@@ -1,0 +1,17 @@
+.coming-container{
+    background: #019585;
+    height: 70vh;
+}
+.dot{
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border:1px solid rgb(255, 255, 255);
+    border-radius: 50px;
+    z-index: 1;
+}
+.text{
+    font-size: 50px;
+    font-family: 'Plus Jakarta Sans';
+    color: white;
+}
